@@ -91,19 +91,27 @@ body {
     #hero-section-text {
         padding-left: 50px;
     }
+    #tool-icon {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 @media (max-width: 580px) {
     #hero-title {
-        font-size: 32px;
+        font-size: 52px;
     }
 
     #hero-subtitle {
-        font-size: 16px;
+        font-size: 36px;
     }
 
     #hero-section-text {
         padding-left: 20px;
+    }
+
+    #tool-icon {
+        visibility: hidden;
     }
 }
 
@@ -114,10 +122,50 @@ body {
     width: 100vw;
     display: flex;
     justify-content: center;
-    align-items: centers;
+    align-items: center;
     margin-top: 5vh;
 }
 
+
 #search-bar {
-    width: 50%;
+    background-color: #ffffff;
+    max-width: 40%;
+    height: 22px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: 300;
+    font-size: 16px;
+    flex: auto;
+    border: none;
+    border-radius: 20px 0px 0px 20px;
+}
+
+#search-bar:focus {
+    outline: none;
+}
+
+#search-type-menu {
+    background-color: #ffffff;
+    border: 0;
+    height: 32px;
+    border-radius: 0px 20px 20px 0px;
+    padding: 0px 15px 0px 15px;
+    font-weight: 400;
+    font-size: 13px;
+    border-left: 1px solid #dcdcdc;
+    color: #adaaaa;
+}
+
+#search-button {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 24px;
+    padding-left: 10px;
+}
+
+#search-button:hover {
+    cursor: pointer;
+    font-weight: 1000;
+    color: #dcdcdc;
 }
