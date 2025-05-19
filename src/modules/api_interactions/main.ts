@@ -113,4 +113,19 @@ export async function getPlayersPeers(id: string): Promise<any> {
     return dataSortedByGames;
 }
 
+export async function getMatchData(id: string): Promise<any> {
+    const res = await fetch(`${API_URL}/matches/${id}`);
+
+    if (!res.ok) {
+        if (res.status == 400) {
+            throw new Error("Match not found. Please validate ID");
+        } else {
+            throw new Error("Error fetching match data");
+        }
+    }
+
+    const matchData: Promise<any> = await res.json();
+    return matchData;
+}
+
 //https://api.opendota.com/api/players/{account_id}/heroes
