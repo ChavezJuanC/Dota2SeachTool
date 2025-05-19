@@ -6,6 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import {
     getPlayerById,
     getMatchData,
+    getHeroByName,
 } from "../../../modules/api_interactions/main";
 
 function SearchBar() {
@@ -37,7 +38,7 @@ function SearchBar() {
                 case "Match":
                     //fetch match
                     console.log("fetching match");
-                    const matchData: Promise<any> = getMatchData(
+                    const matchData: Promise<any> = await getMatchData(
                         searchValue.trim()
                     );
                     console.log(matchData);
@@ -45,6 +46,10 @@ function SearchBar() {
                 case "Hero":
                     //fetch hero
                     console.log("fetching hero");
+                    const heroData: Promise<any> = await getHeroByName(
+                        searchValue.trim()
+                    );
+                    console.log(heroData);
                     break;
             }
         } catch (error) {

@@ -1,5 +1,16 @@
 import { API_KEY, API_URL } from "../../constants/main";
 
+//Interface for basic hero
+interface BasicHero {
+    id: number;
+    name: string;
+    localized_name: string;
+    primary_attr: string;
+    attack_type: string;
+    roles: Array<string>;
+    legs: number;
+}
+
 // fetch player profile by id
 export async function getPlayerById(id: string): Promise<any> {
     const res = await fetch(`${API_URL}/players/${id}?${API_KEY}`);
@@ -96,7 +107,7 @@ export async function getPlayerMostPlayedHeros(id: string): Promise<any> {
 
 //fetch player peers
 export async function getPlayersPeers(id: string): Promise<any> {
-    const res = await fetch(`${API_URL}/players/${id}/peers`);
+    const res = await fetch(`${API_URL}/players/${id}/peers?${API_KEY}`);
 
     if (!res.ok) {
         if (res.status === 400) {
@@ -114,7 +125,7 @@ export async function getPlayersPeers(id: string): Promise<any> {
 }
 
 export async function getMatchData(id: string): Promise<any> {
-    const res = await fetch(`${API_URL}/matches/${id}`);
+    const res = await fetch(`${API_URL}/matches/${id}?${API_KEY}`);
 
     if (!res.ok) {
         if (res.status == 400) {
@@ -126,6 +137,34 @@ export async function getMatchData(id: string): Promise<any> {
 
     const matchData: Promise<any> = await res.json();
     return matchData;
+}
+
+//improve this function to remove _ from the string //result = str.replaceAll("l", ""); //
+
+export async function getHeroByName(heroName: string): Promise<any> {
+    const res = await fetch(`${API_URL}/heroes/?${API_KEY}`);
+
+    if (!res.ok) {
+        if (res.status == 400) {
+            throw new Error("Hero not found, verify name");
+        } else {
+            throw new Error("Error searching for hero");
+        }
+    }
+
+    const allHeroData = await res.json();
+
+    const heroFound: BasicHero = allHeroData.find(
+        (hero: BasicHero) =>
+            hero.localized_name.trim().toLowerCase().replace(" ", "") ==
+            heroName.trim().toLowerCase().replace(" ", "")
+    );
+
+    if (heroFound != undefined) {
+        return heroFound;
+    } else {
+        throw new Error("Hero does not exist");
+    }
 }
 
 //https://api.opendota.com/api/players/{account_id}/heroes
