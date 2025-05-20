@@ -61,13 +61,13 @@ body {
 #hero-title {
     font-size: 128px;
     font-family: "Bakbak One", sans-serif;
-    color: #ffffff;
+    color: whitesmoke;
 }
 
 #hero-subtitle {
     font-size: 64px;
     font-family: "Bakbak One", sans-serif;
-    color: #ffffff;
+    color: whitesmoke;
     margin-top: 10px;
 }
 
@@ -76,7 +76,7 @@ body {
     height: 50px;
     position: relative;
     bottom: 20px;
-    color: #ffffff;
+    color: whitesmoke;
 }
 
 /* Tablet */
@@ -130,7 +130,7 @@ body {
 }
 
 #search-bar {
-    background-color: #ffffff;
+    background-color: whitesmoke;
     max-width: 40%;
     height: 22px;
     padding: 5px;
@@ -148,7 +148,7 @@ body {
 }
 
 #search-type-menu {
-    background-color: #ffffff;
+    background-color: whitesmoke;
     border: 0;
     height: 32px;
     border-radius: 0px 20px 20px 0px;
@@ -160,7 +160,7 @@ body {
 }
 
 #search-button {
-    color: #ffffff;
+    color: whitesmoke;
     font-weight: 400;
     font-size: 24px;
     padding-left: 10px;
@@ -177,13 +177,15 @@ body {
 /* Player Card */
 #player-card-container {
     width: 500px;
-    padding: 30px;
+    padding: 10px 30px;
     border-radius: 10px;
-    background-color: #d9d9d920;
+    background-color: #ffffff20;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     position: relative;
+    border: solid 2px #5e35b1;
+    margin-left: auto;
+    margin-right: auto;
     top: 150px;
-    left: 100px;
 }
 
 #player-card-info-container {
@@ -191,6 +193,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     justify-items: center;
+    align-items: center;
 }
 
 #basic-info-wrapper {
@@ -203,31 +206,38 @@ body {
 }
 
 #player-photo {
-    max-width: 120px;
-    max-height: 120px;
+    max-width: 150px;
+    max-height: 150px;
     border-radius: 100%;
     object-fit: cover;
     display: block;
+    border: solid 2px whitesmoke;
 }
 
 #rank-photo {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     object-fit: cover;
     display: block;
+    margin-bottom: 10px;
+    margin-top: 25px;
 }
 
 #basic-info-stats {
     text-align: center;
+    position: relative;
+    top: 10px;
 }
 
 .basic-info-label {
-    color: #ffffff;
+    color: #f4fae0;
     font-family: "Bakbak One", sans-serif;
+    font-size: 20px;
+    margin: 0;
 }
 
 .basic-info-text {
-    color: #ffffff;
+    color: #c0b3d6;
     font-weight: 50;
     font-family: "Bakbak One", sans-serif;
 }
@@ -250,5 +260,8 @@ body {
     }
     #player-card-info-container {
         flex-direction: column;
+    }
+    #basic-info-stats {
+        margin-bottom: 30px;
     }
 }

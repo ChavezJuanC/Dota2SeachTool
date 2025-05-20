@@ -1,5 +1,6 @@
 import { API_KEY, API_URL } from "../../constants/main";
 import type { BasicHero } from "../../interfaces/HeroInterfaces";
+import type { PlayerWinLossInterface } from "../../interfaces/PlayerInterfaces";
 
 // fetch player profile by id
 export async function getPlayerById(id: string): Promise<any> {
@@ -18,7 +19,9 @@ export async function getPlayerById(id: string): Promise<any> {
 }
 
 // fetch player win-loss ratio
-export async function getPlayersWinLossRatio(id: string): Promise<any> {
+export async function getPlayersWinLossRatio(
+    id: string
+): Promise<PlayerWinLossInterface> {
     const res = await fetch(
         `${API_URL}/players/${id}/wl/?significant=0?${API_KEY}`
     );
