@@ -1,15 +1,5 @@
 import { API_KEY, API_URL } from "../../constants/main";
-
-//Interface for basic hero
-interface BasicHero {
-    id: number;
-    name: string;
-    localized_name: string;
-    primary_attr: string;
-    attack_type: string;
-    roles: Array<string>;
-    legs: number;
-}
+import type { BasicHero } from "../../interfaces/HeroInterfaces";
 
 // fetch player profile by id
 export async function getPlayerById(id: string): Promise<any> {
@@ -141,7 +131,7 @@ export async function getMatchData(id: string): Promise<any> {
 
 //improve this function to remove _ from the string //result = str.replaceAll("l", ""); //
 
-export async function getHeroByName(heroName: string): Promise<any> {
+export async function getHeroByName(heroName: string): Promise<BasicHero> {
     const res = await fetch(`${API_URL}/heroes/?${API_KEY}`);
 
     if (!res.ok) {

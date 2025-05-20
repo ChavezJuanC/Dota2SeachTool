@@ -79,6 +79,8 @@ body {
     color: #ffffff;
 }
 
+/* Tablet */
+
 @media (max-width: 1250px) {
     #hero-title {
         font-size: 52px;
@@ -97,6 +99,7 @@ body {
     }
 }
 
+/* Mobile */
 @media (max-width: 580px) {
     #hero-title {
         font-size: 52px;
@@ -125,7 +128,6 @@ body {
     align-items: center;
     margin-top: 5vh;
 }
-
 
 #search-bar {
     background-color: #ffffff;
@@ -168,4 +170,70 @@ body {
     cursor: pointer;
     font-weight: 1000;
     color: #dcdcdc;
+}
+
+/* Player Profile*/
+
+/* Player Card */
+#player-card-container {
+    width: 500px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #d9d9d920;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#player-card-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+#basic-info-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    padding-top: 40px;
+}
+
+#player-photo {
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#rank-photo {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    display: block;
+}
+
+#basic-info-stats {
+    text-align: center;
+}
+
+.basic-info-label {
+    color: #ffffff;
+    font-family: "Bakbak One", sans-serif;
+}
+
+.basic-info-text {
+    color: #ffffff;
+    font-weight: 50;
+    font-family: "Bakbak One", sans-serif;
+}
+
+#rank-name-section {
+    padding-left: 20px;
+}
+
+@media (max-width: 580px) {
+    #player-card-container {
+        width: 90%;
+    }
 }

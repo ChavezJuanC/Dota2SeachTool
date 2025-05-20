@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 //API helper functions
 import {
@@ -12,6 +13,9 @@ import {
 function SearchBar() {
     const [searchValue, setSearchValue] = useState<string>("");
     const [searchType, setSearchType] = useState<string>("Player");
+
+    //navigation
+    const navigate = useNavigate();
 
     function handleSearch(): void {
         // Handle the search logic here
@@ -26,6 +30,7 @@ function SearchBar() {
     // handle search request based on drop-down menu selection
     async function handleSearchRequest(queryType: string): Promise<void> {
         try {
+            const trimmedSearchValue = searchValue.trim();
             switch (queryType) {
                 case "Player":
                     //fetch player
@@ -33,22 +38,22 @@ function SearchBar() {
                     const playerData: Promise<any> = await getPlayerById(
                         searchValue.trim()
                     );
+
                     console.log(playerData);
+                    navigate(`/player-profile/${trimmedSearchValue}`);
                     break;
                 case "Match":
                     //fetch match
                     console.log("fetching match");
                     const matchData: Promise<any> = await getMatchData(
-                        searchValue.trim()
+                        trimmedSearchValue
                     );
                     console.log(matchData);
                     break;
                 case "Hero":
                     //fetch hero
                     console.log("fetching hero");
-                    const heroData: Promise<any> = await getHeroByName(
-                        searchValue.trim()
-                    );
+                    const heroData = await getHeroByName(trimmedSearchValue);
                     console.log(heroData);
                     break;
             }
