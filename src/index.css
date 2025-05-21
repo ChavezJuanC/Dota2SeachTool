@@ -4,13 +4,32 @@ html,
 body {
     margin: 0;
     padding: 0;
+    height: 2000px;
+}
+
+.main-section-title {
+    font-family: "Bakbak One", sans-serif;
+    font-size: 45px;
+    color: white;
+}
+
+@media (max-width: 850px) {
+    .main-section-title {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 580px) {
+    .main-section-title {
+        font-size: 30px;
+    }
 }
 
 /* styling for the root element */
 #root {
     background: linear-gradient(135deg, #732f81 0%, #05453a 100%);
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100%;
 }
 
 /* styling for nav bar element */
@@ -121,7 +140,6 @@ body {
 /* styling for the search bar element */
 
 #search-bar-container {
-    height: 100hv;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -179,10 +197,10 @@ body {
     width: 500px;
     padding: 10px 30px;
     border-radius: 10px;
-    background-color: #ffffff20;
+    background-color: #05453a20;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     position: relative;
-    border: solid 2px #5e35b1;
+    border: solid 2px whitesmoke;
     margin-left: auto;
     margin-right: auto;
     top: 150px;
@@ -246,12 +264,6 @@ body {
     padding-left: 20px;
 }
 
-@media (max-width: 580px) {
-    #player-card-container {
-        width: 80%;
-    }
-}
-
 @media (max-width: 850px) {
     #player-card-container {
         left: 0;
@@ -264,4 +276,80 @@ body {
     #basic-info-stats {
         margin-bottom: 30px;
     }
+}
+
+@media (max-width: 580px) {
+    #player-card-container {
+        width: 80%;
+    }
+}
+
+/*Game Feed Section*/
+
+#recent-games-title-container {
+    text-align: center;
+    position: relative;
+    top: 200px;
+}
+
+#game-history-container {
+    width: 900px;
+    height: 442px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 230px;
+    border-radius: 10px;
+    background-color: #05453a20;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: solid 2px whitesmoke;
+    overflow: auto;
+    overflow-anchor: auto;
+    padding: 10px;
+}
+
+@media (max-width: 950px) {
+    #game-history-container {
+        border: solid 2px rgb(0, 23, 155);
+        width: 90%;
+    }
+}
+
+/* Game card*/
+#game-card {
+    border: solid 2px #8b62d3;
+    background-color: rgb(221, 214, 214);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-items: center;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#hero-image {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 100%;
+    object-fit: cover;
+    display: block;
+    border: solid 2px whitesmoke;
+}
+
+.banner-stats-text {
+    color: #8b62d3;
+    font-weight: 50;
+    font-family: "Bakbak One", sans-serif;
+}
+
+#hero-info-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    gap: 20px;
 }
