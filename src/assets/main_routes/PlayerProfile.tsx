@@ -18,6 +18,23 @@ function PlayerProfile() {
             <div id="game-feed-container">
                 <GamesFeed id={id ?? ""} />
             </div>
+            <div id="bottom-section-wrapper">
+                <div id="mostplayed-heroes-container">
+                    <h1
+                        id="mostplayed-heroes-title"
+                        className="main-section-title"
+                    >
+                        Most Played Heroes
+                    </h1>
+                    <div id="mostplayed-heroes-show-box"></div>
+                </div>
+                <div id="peers-container">
+                    <h1 id="peers-title" className="main-section-title">
+                        Friends
+                    </h1>
+                    <div id="peers-show-box"></div>
+                </div>
+            </div>
         </div>
     );
 }

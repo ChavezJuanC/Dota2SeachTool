@@ -359,3 +359,51 @@ body {
         display: none;
     }
 }
+
+/* Bottom Section */
+
+#bottom-section-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+    row-gap: 100px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    top: 300px;
+}
+
+#mostplayed-heroes-container {
+    position: relative;
+    text-align: center;
+}
+
+#peers-container {
+    position: relative;
+    text-align: center;
+}
+
+#mostplayed-heroes-show-box {
+    border: solid 2px white;
+    width: 600px;
+    height: 400px;
+    background-color: #05453a20;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: solid 2px whitesmoke;
+    border-radius: 10px;
+}
+
+#peers-show-box {
+    border: solid 2px white;
+    width: 400px;
+    height: 400px;
+    background-color: #05453a20;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: solid 2px whitesmoke;
+    border-radius: 10px;
+}
+
+#mostplayed-heroes-title,
+#peers-title {
+    margin-bottom: 65px;
+}
