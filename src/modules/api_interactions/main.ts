@@ -1,6 +1,9 @@
 import { API_KEY, API_URL } from "../../constants/main";
 import type { BasicHero } from "../../interfaces/HeroInterfaces";
-import type { PlayerWinLossInterface } from "../../interfaces/PlayerInterfaces";
+import type {
+    PlayerWinLossInterface,
+    MatchSummaryInterface,
+} from "../../interfaces/PlayerInterfaces";
 
 // fetch player profile by id
 export async function getPlayerById(id: string): Promise<any> {
@@ -38,9 +41,11 @@ export async function getPlayersWinLossRatio(
 }
 
 //fetch last 10 games
-export async function getLastTenGames(id: string): Promise<any> {
+export async function getLastTwentyGames(
+    id: string
+): Promise<Array<MatchSummaryInterface>> {
     const res = await fetch(
-        `${API_URL}/players/${id}/matches/?significant=0?${API_KEY}`
+        `${API_URL}/players/${id}/recentmatches/?significant=0?${API_KEY}`
     );
 
     if (!res.ok) {
@@ -76,8 +81,8 @@ export async function getNextTenGames(
     return data;
 }
 
-//fetch most played heros
-export async function getPlayerMostPlayedHeros(id: string): Promise<any> {
+//fetch most played heroes
+export async function getPlayerMostPlayedHeroes(id: string): Promise<any> {
     const res = await fetch(
         `${API_URL}/players/${id}/heroes/?significant=0?${API_KEY}`
     );
@@ -158,6 +163,24 @@ export async function getHeroByName(heroName: string): Promise<BasicHero> {
     } else {
         throw new Error("Hero does not exist");
     }
+}
+
+//get all heros
+
+export async function getAllHeros(): Promise<Array<BasicHero>> {
+    const res = await fetch(`${API_URL}/heroes?${API_KEY}`);
+
+    if (!res.ok) {
+        if (res.status == 400) {
+            throw new Error("Hero List Not Found");
+        } else {
+            throw new Error("Error fetching hero list");
+        }
+    }
+
+    const allHeroData: Promise<Array<BasicHero>> = await res.json();
+
+    return allHeroData;
 }
 
 //https://api.opendota.com/api/players/{account_id}/heroes

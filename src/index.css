@@ -42,7 +42,7 @@ body {
     right: 0;
     top: 0;
     margin: 70px 60px;
-    position: fixed;
+    position: absolute;
     color: #dcdcdc;
     font-weight: 400;
     text-decoration: none;
@@ -197,10 +197,10 @@ body {
     width: 500px;
     padding: 10px 30px;
     border-radius: 10px;
-    background-color: #05453a20;
+    border: solid 2px white;
+    background-color: rgb(221, 214, 214, 0.7);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     position: relative;
-    border: solid 2px whitesmoke;
     margin-left: auto;
     margin-right: auto;
     top: 150px;
@@ -229,7 +229,7 @@ body {
     border-radius: 100%;
     object-fit: cover;
     display: block;
-    border: solid 2px whitesmoke;
+    border: solid 2px white;
 }
 
 #rank-photo {
@@ -248,14 +248,14 @@ body {
 }
 
 .basic-info-label {
-    color: #f4fae0;
+    color: #6c38c7;
     font-family: "Bakbak One", sans-serif;
     font-size: 20px;
     margin: 0;
 }
 
 .basic-info-text {
-    color: #c0b3d6;
+    color: #8b62d3;
     font-weight: 50;
     font-family: "Bakbak One", sans-serif;
 }
@@ -269,6 +269,7 @@ body {
         left: 0;
         top: 130px;
         margin: auto;
+        max-width: 70%;
     }
     #player-card-info-container {
         flex-direction: column;
@@ -310,7 +311,6 @@ body {
 
 @media (max-width: 950px) {
     #game-history-container {
-        border: solid 2px rgb(0, 23, 155);
         width: 90%;
     }
 }
@@ -318,7 +318,7 @@ body {
 /* Game card*/
 #game-card {
     border: solid 2px #8b62d3;
-    background-color: rgb(221, 214, 214);
+    background-color: rgb(221, 214, 214, 0.7);
     margin: 5px;
     padding: 5px;
     border-radius: 10px;
@@ -338,7 +338,7 @@ body {
     border-radius: 100%;
     object-fit: cover;
     display: block;
-    border: solid 2px whitesmoke;
+    border: solid 2px #8b62d3;
 }
 
 .banner-stats-text {
@@ -352,4 +352,10 @@ body {
     flex-direction: row;
     justify-items: center;
     gap: 20px;
+}
+
+@media (max-width: 950px) {
+    .mobile-optional {
+        display: none;
+    }
 }

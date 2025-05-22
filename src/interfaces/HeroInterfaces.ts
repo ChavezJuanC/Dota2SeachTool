@@ -6,5 +6,5 @@ export interface BasicHero {
     primary_attr: string;
     attack_type: string;
     roles: Array<string>;
-    legs: number;
 }
+

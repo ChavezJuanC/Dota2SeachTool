@@ -16,7 +16,7 @@ function PlayerProfile() {
                 )}
             </div>
             <div id="game-feed-container">
-                <GamesFeed />
+                <GamesFeed id={id ?? ""} />
             </div>
         </div>
     );

@@ -1,6 +1,36 @@
+import { useEffect, useState } from "react";
 import GameCard from "./GameCard";
+import { getLastTwentyGames } from "../../../modules/api_interactions/main";
+import type {
+    PlayerCardInterface,
+    MatchSummaryInterface,
+} from "../../../interfaces/PlayerInterfaces";
 
-function GamesFeed() {
+function GamesFeed({ id }: PlayerCardInterface) {
+    //Fetch data for gameCardsData Array
+    const [gameCardData, setCardGameData] =
+        useState<Array<MatchSummaryInterface>>();
+
+    function createRecentGameCards(data: Array<MatchSummaryInterface>) {
+        const cards = data.map((card) => (
+            <GameCard key={card.match_id} matchData={card} />
+        ));
+
+        return cards;
+    }
+
+    useEffect(() => {
+        async function fetchData() {
+            const data: Array<MatchSummaryInterface> = await getLastTwentyGames(
+                id
+            );
+            setCardGameData(data);
+            console.log(data);
+        }
+
+        fetchData();
+    }, []);
+
     return (
         <div>
             <div id="recent-games-title-container">
@@ -9,24 +39,10 @@ function GamesFeed() {
                 </h1>
             </div>
             <div id="game-history-container">
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
+                {gameCardData && createRecentGameCards(gameCardData)}
             </div>
         </div>
     );
 }
 
 export default GamesFeed;
-
-/*
-Next Steps
-
-- Make game card component dynamic
-- Feed actual data from game to fetch to game cards array
-*/
