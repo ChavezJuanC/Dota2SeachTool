@@ -25,7 +25,6 @@ function GamesFeed({ id }: PlayerCardInterface) {
                 id
             );
             setCardGameData(data);
-            console.log(data);
         }
 
         fetchData();

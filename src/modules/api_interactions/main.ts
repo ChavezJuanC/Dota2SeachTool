@@ -1,8 +1,12 @@
 import { API_KEY, API_URL } from "../../constants/main";
-import type { BasicHero } from "../../interfaces/HeroInterfaces";
+import type {
+    BasicHero,
+    MostPlayedHeroesInterface,
+} from "../../interfaces/HeroInterfaces";
 import type {
     PlayerWinLossInterface,
     MatchSummaryInterface,
+    PeerInterface,
 } from "../../interfaces/PlayerInterfaces";
 
 // fetch player profile by id
@@ -82,7 +86,9 @@ export async function getNextTenGames(
 }
 
 //fetch most played heroes
-export async function getPlayerMostPlayedHeroes(id: string): Promise<any> {
+export async function getPlayerMostPlayedHeroes(
+    id: string
+): Promise<Array<MostPlayedHeroesInterface>> {
     const res = await fetch(
         `${API_URL}/players/${id}/heroes/?significant=0?${API_KEY}`
     );
@@ -95,8 +101,8 @@ export async function getPlayerMostPlayedHeroes(id: string): Promise<any> {
         }
     }
 
-    const data = await res.json();
-    const dataSortedByGames = await data.sort(
+    const data: Array<MostPlayedHeroesInterface> = await res.json();
+    const dataSortedByGames: Array<MostPlayedHeroesInterface> = data.sort(
         (a: any, b: any) => b.games - a.games
     );
 
@@ -104,7 +110,9 @@ export async function getPlayerMostPlayedHeroes(id: string): Promise<any> {
 }
 
 //fetch player peers
-export async function getPlayersPeers(id: string): Promise<any> {
+export async function getPlayersPeers(
+    id: string
+): Promise<Array<PeerInterface>> {
     const res = await fetch(`${API_URL}/players/${id}/peers?${API_KEY}`);
 
     if (!res.ok) {
@@ -115,10 +123,11 @@ export async function getPlayersPeers(id: string): Promise<any> {
         }
     }
 
-    const data = await res.json();
-    const dataSortedByGames = await data.sort(
+    const data: Array<PeerInterface> = await res.json();
+    const dataSortedByGames = data.sort(
         (a: any, b: any) => b.with_games - a.with_games
     );
+
     return dataSortedByGames;
 }
 

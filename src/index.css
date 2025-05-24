@@ -7,10 +7,57 @@ body {
     height: 2000px;
 }
 
+/* shared classes */
+
 .main-section-title {
     font-family: "Bakbak One", sans-serif;
     font-size: 45px;
     color: white;
+}
+
+.basic-info-label {
+    color: #6c38c7;
+    font-family: "Bakbak One", sans-serif;
+    font-size: 20px;
+    margin: 0;
+}
+
+.basic-info-text {
+    color: #8b62d3;
+    font-weight: 50;
+    font-family: "Bakbak One", sans-serif;
+}
+
+.basic-card {
+    border: solid 2px #8b62d3;
+    background-color: rgb(221, 214, 214, 0.7);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-items: center;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.hero-image {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 100%;
+    object-fit: cover;
+    display: block;
+    border: solid 2px #8b62d3;
+}
+
+.hero-info-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    gap: 20px;
 }
 
 @media (max-width: 850px) {
@@ -230,6 +277,7 @@ body {
     object-fit: cover;
     display: block;
     border: solid 2px white;
+    border: solid 2px #8b62d3;
 }
 
 #rank-photo {
@@ -245,19 +293,6 @@ body {
     text-align: center;
     position: relative;
     top: 10px;
-}
-
-.basic-info-label {
-    color: #6c38c7;
-    font-family: "Bakbak One", sans-serif;
-    font-size: 20px;
-    margin: 0;
-}
-
-.basic-info-text {
-    color: #8b62d3;
-    font-weight: 50;
-    font-family: "Bakbak One", sans-serif;
 }
 
 #rank-name-section {
@@ -316,42 +351,11 @@ body {
 }
 
 /* Game card*/
-#game-card {
-    border: solid 2px #8b62d3;
-    background-color: rgb(221, 214, 214, 0.7);
-    margin: 5px;
-    padding: 5px;
-    border-radius: 10px;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-items: center;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-#hero-image {
-    max-width: 50px;
-    max-height: 50px;
-    border-radius: 100%;
-    object-fit: cover;
-    display: block;
-    border: solid 2px #8b62d3;
-}
 
 .banner-stats-text {
     color: #8b62d3;
     font-weight: 50;
     font-family: "Bakbak One", sans-serif;
-}
-
-#hero-info-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-items: center;
-    gap: 20px;
 }
 
 @media (max-width: 950px) {
@@ -383,7 +387,7 @@ body {
     text-align: center;
 }
 
-#mostplayed-heroes-show-box {
+#mostplayed-heroes-shadow-box {
     border: solid 2px white;
     width: 600px;
     height: 400px;
@@ -391,6 +395,8 @@ body {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border: solid 2px whitesmoke;
     border-radius: 10px;
+    padding: 10px 10px;
+    overflow: auto;
 }
 
 #peers-show-box {
@@ -401,9 +407,43 @@ body {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border: solid 2px whitesmoke;
     border-radius: 10px;
+    overflow: auto;
+    padding: 10px 10px;
 }
 
 #mostplayed-heroes-title,
 #peers-title {
     margin-bottom: 65px;
+}
+
+@media (max-width: 500px) {
+    #peers-show-box {
+        border: solid 5px purple;
+        width: 87%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 650px) {
+    #mostplayed-heroes-show-box {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Peer Card */
+
+#peer-image {
+    border: solid 2px #8b62d3;
+}
+
+/* Most Played Heroes Card */
+
+#most-played-heroes-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }

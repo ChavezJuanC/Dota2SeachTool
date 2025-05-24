@@ -2,9 +2,12 @@ import { useParams } from "react-router-dom";
 import PlayerCard from "../components/player-profile/PlayerCard";
 import BackHomeButton from "../components/general/BackHomeButton";
 import GamesFeed from "../components/player-profile/GamesFeed";
+import PlayerPeerFeed from "../components/player-profile/PlayerPeerFeed";
+import MostPlayedHeroesFeed from "../components/player-profile/MostPlayedHeroesFeed";
 
 function PlayerProfile() {
     const { id } = useParams<string>();
+
     return (
         <div>
             <BackHomeButton />
@@ -26,13 +29,17 @@ function PlayerProfile() {
                     >
                         Most Played Heroes
                     </h1>
-                    <div id="mostplayed-heroes-show-box"></div>
+                    <div id="mostplayed-heroes-shadow-box">
+                        <MostPlayedHeroesFeed id={id ?? ""} />
+                    </div>
                 </div>
                 <div id="peers-container">
                     <h1 id="peers-title" className="main-section-title">
                         Friends
                     </h1>
-                    <div id="peers-show-box"></div>
+                    <div id="peers-show-box">
+                        <PlayerPeerFeed id={id ?? ""} />
+                    </div>
                 </div>
             </div>
         </div>
