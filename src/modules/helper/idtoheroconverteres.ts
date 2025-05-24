@@ -3,13 +3,17 @@ import type { BasicHero } from "../../interfaces/HeroInterfaces";
 
 //fetch heros for reference...
 
+let heroList: Array<BasicHero>;
+
 export async function idToHeroName(id: string): Promise<string> {
     //this fucntion cant be call every time... it causes issues..
     //Maybe have it check of X var is empty.. if it is run the list.. but if its not than fetch the list..
     //Maybe fetch the full list 1 time a day
-    const heroData: Array<BasicHero> = await getAllHeros();
+    if (heroList === undefined) {
+        heroList = await getAllHeros();
+    }
 
-    const hero = heroData.find((hero) => hero.id.toString() == id);
+    const hero = heroList.find((hero) => hero.id.toString() == id);
 
     if (!hero || !hero.localized_name) {
         throw new Error(`Hero with id ${id} not found.`);
