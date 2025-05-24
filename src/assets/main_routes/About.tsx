@@ -2,7 +2,7 @@ import BackHomeButton from "../components/general/BackHomeButton";
 
 function About() {
     return (
-        <div>
+        <div >
             <BackHomeButton />
         </div>
     );
