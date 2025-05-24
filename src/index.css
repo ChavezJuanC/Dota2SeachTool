@@ -399,7 +399,7 @@ body {
     overflow: auto;
 }
 
-#peers-show-box {
+#peers-shadow-box {
     border: solid 2px white;
     width: 400px;
     height: 400px;
@@ -416,20 +416,28 @@ body {
     margin-bottom: 65px;
 }
 
-@media (max-width: 500px) {
-    #peers-show-box {
-        border: solid 5px purple;
-        width: 87%;
+@media (max-width: 650px) {
+    #mostplayed-heroes-shadow-box {
+        width: 460px;
         margin-left: auto;
         margin-right: auto;
     }
 }
 
-@media (max-width: 650px) {
-    #mostplayed-heroes-show-box {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
+@media (max-width: 500px) {
+    #peers-shadow-box {
+        width: 350px;
+    }
+
+    #mostplayed-heroes-shadow-box {
+        width: 360px;
+    }
+}
+
+@media (max-width: 400px) {
+    #peers-shadow-box,
+    #mostplayed-heroes-shadow-box {
+        border: none;
     }
 }
 
@@ -446,4 +454,8 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+#win-rate-txt {
+    display: inline;
 }

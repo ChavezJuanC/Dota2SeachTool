@@ -26,23 +26,28 @@ function MostPlayedHeroesCard({ heroData }: MostPlayedHeroesCardInterface) {
         <div id="most-played-heroes-card" className="basic-card">
             <div className="hero-info-wrapper" id="hero-info-wrapper2">
                 <img
-                    src={`/Hero_Photos/${heroName}.png`}
+                    src={`/Hero_Photos/${
+                        /* Super rare edge case for antimage*/
+                        heroName != "anti_mage" ? heroName : "antimage"
+                    }.png`}
                     id="hero-image2"
                     className="hero-image"
                 />
-                <h3 className="banner-stats-text mobile-optional">
-                    {heroData.hero_id}
+                <h3 className="banner-stats-text">
+                    {heroName.toUpperCase().replace("_", " ")}
                 </h3>
             </div>
             <h3 className="banner-stats-text" id="win-rate-with-peer">
-                {"Win Rate: " +
-                    ((heroData.with_games / heroData.with_win) * 100)
-                        .toFixed(2)
-                        .toString() +
-                    "%"}
+                {+((heroData.with_games / heroData.with_win) * 10)
+                    .toFixed(2)
+                    .toString() + "%"}
             </h3>
-            <h3 className="banner-stats-text" id="total-games-with-peer">
-                {`${heroData.with_games} Games`}
+            <h3
+                className="banner-stats-text mobile-optional"
+                id="total-games-with-peer"
+            >
+                {heroData.with_games}
+                {" Games"}
             </h3>
         </div>
     );

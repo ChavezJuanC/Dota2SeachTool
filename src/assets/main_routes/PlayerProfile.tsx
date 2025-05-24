@@ -37,7 +37,7 @@ function PlayerProfile() {
                     <h1 id="peers-title" className="main-section-title">
                         Friends
                     </h1>
-                    <div id="peers-show-box">
+                    <div id="peers-shadow-box">
                         <PlayerPeerFeed id={id ?? ""} />
                     </div>
                 </div>
@@ -47,3 +47,4 @@ function PlayerProfile() {
 }
 
 export default PlayerProfile;
+
