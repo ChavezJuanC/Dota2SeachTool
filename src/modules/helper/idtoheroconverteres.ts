@@ -6,9 +6,7 @@ import type { BasicHero } from "../../interfaces/HeroInterfaces";
 let heroList: Array<BasicHero>;
 
 export async function idToHeroName(id: string): Promise<string> {
-    //this fucntion cant be call every time... it causes issues..
-    //Maybe have it check of X var is empty.. if it is run the list.. but if its not than fetch the list..
-    //Maybe fetch the full list 1 time a day
+    //if 24hrs have passed since last fetch... fetch.. else use ref list
     if (heroList === undefined) {
         heroList = await getAllHeros();
     }
@@ -24,6 +22,3 @@ export async function idToHeroName(id: string): Promise<string> {
 
     return heroName;
 }
-
-//match id to hero
-//return hero name formated for img
