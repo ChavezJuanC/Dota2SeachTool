@@ -4,7 +4,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    height: 2000px;
+    height: 100%;
 }
 
 /* shared classes */
@@ -32,16 +32,13 @@ body {
     border: solid 2px #8b62d3;
     background-color: rgb(221, 214, 214, 0.7);
     margin: 5px;
-    padding: 5px;
+    padding: 10px 20px;
     border-radius: 10px;
     height: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     justify-items: center;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 .hero-image {
@@ -76,7 +73,7 @@ body {
 #root {
     background: linear-gradient(135deg, #732f81 0%, #05453a 100%);
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 /* styling for nav bar element */
@@ -89,7 +86,6 @@ body {
     right: 0;
     top: 0;
     margin: 70px 60px;
-    position: absolute;
     color: #dcdcdc;
     font-weight: 400;
     text-decoration: none;
@@ -145,8 +141,6 @@ body {
     color: whitesmoke;
 }
 
-/* Tablet */
-
 @media (max-width: 1250px) {
     #hero-title {
         font-size: 52px;
@@ -165,7 +159,6 @@ body {
     }
 }
 
-/* Mobile */
 @media (max-width: 580px) {
     #hero-title {
         font-size: 52px;
@@ -198,14 +191,12 @@ body {
     background-color: whitesmoke;
     max-width: 40%;
     height: 22px;
-    padding: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 5px 15px;
     font-weight: 300;
     font-size: 16px;
     flex: auto;
     border: none;
-    border-radius: 20px 0px 0px 20px;
+    border-radius: 20px 0 0 20px;
 }
 
 #search-bar:focus {
@@ -216,8 +207,8 @@ body {
     background-color: whitesmoke;
     border: 0;
     height: 32px;
-    border-radius: 0px 20px 20px 0px;
-    padding: 0px 15px 0px 15px;
+    border-radius: 0 20px 20px 0;
+    padding: 0 15px;
     font-weight: 400;
     font-size: 13px;
     border-left: 1px solid #dcdcdc;
@@ -237,7 +228,7 @@ body {
     color: #dcdcdc;
 }
 
-/* Player Profile*/
+/* Player Profile */
 
 /* Player Card */
 #player-card-container {
@@ -247,17 +238,13 @@ body {
     border: solid 2px white;
     background-color: rgb(221, 214, 214, 0.7);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    top: 150px;
+    margin: 50px auto 0 auto;
 }
 
 #player-card-info-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    justify-items: center;
     align-items: center;
 }
 
@@ -265,7 +252,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    justify-items: center;
     padding-top: 40px;
     min-height: 200px;
 }
@@ -276,7 +262,6 @@ body {
     border-radius: 100%;
     object-fit: cover;
     display: block;
-    border: solid 2px white;
     border: solid 2px #8b62d3;
 }
 
@@ -285,8 +270,7 @@ body {
     height: 50px;
     object-fit: cover;
     display: block;
-    margin-bottom: 10px;
-    margin-top: 25px;
+    margin: 25px 0 10px 0;
 }
 
 #basic-info-stats {
@@ -301,9 +285,7 @@ body {
 
 @media (max-width: 850px) {
     #player-card-container {
-        left: 0;
-        top: 130px;
-        margin: auto;
+        margin: 10px auto 0 auto;
         max-width: 70%;
     }
     #player-card-info-container {
@@ -320,27 +302,22 @@ body {
     }
 }
 
-/*Game Feed Section*/
+/* Game Feed Section */
 
 #recent-games-title-container {
     text-align: center;
-    position: relative;
-    top: 200px;
+    margin-top: 100px;
 }
 
 #game-history-container {
     width: 900px;
     height: 442px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: 230px;
+    margin: 30px auto 0 auto;
     border-radius: 10px;
     background-color: #05453a20;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border: solid 2px whitesmoke;
     overflow: auto;
-    overflow-anchor: auto;
     padding: 10px;
 }
 
@@ -350,7 +327,7 @@ body {
     }
 }
 
-/* Game card*/
+/* Game Card */
 
 .banner-stats-text {
     color: #8b62d3;
@@ -373,42 +350,35 @@ body {
     row-gap: 100px;
     flex-direction: row;
     flex-wrap: wrap;
-    position: relative;
-    top: 300px;
+    margin-top: 100px;
+    padding-bottom: 100px;
 }
 
-#mostplayed-heroes-container {
-    position: relative;
-    text-align: center;
-}
-
+#mostplayed-heroes-container,
 #peers-container {
-    position: relative;
     text-align: center;
 }
 
 #mostplayed-heroes-shadow-box {
-    border: solid 2px white;
+    border: solid 2px whitesmoke;
     width: 600px;
     height: 400px;
     background-color: #05453a20;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    border: solid 2px whitesmoke;
     border-radius: 10px;
-    padding: 10px 10px;
+    padding: 10px;
     overflow: auto;
 }
 
 #peers-shadow-box {
-    border: solid 2px white;
+    border: solid 2px whitesmoke;
     width: 400px;
     height: 400px;
     background-color: #05453a20;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    border: solid 2px whitesmoke;
     border-radius: 10px;
     overflow: auto;
-    padding: 10px 10px;
+    padding: 10px;
 }
 
 #mostplayed-heroes-title,
@@ -442,13 +412,11 @@ body {
 }
 
 /* Peer Card */
-
 #peer-image {
     border: solid 2px #8b62d3;
 }
 
 /* Most Played Heroes Card */
-
 #most-played-heroes-card {
     display: flex;
     flex-direction: row;

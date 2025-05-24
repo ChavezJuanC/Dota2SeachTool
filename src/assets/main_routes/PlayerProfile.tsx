@@ -9,7 +9,7 @@ function PlayerProfile() {
     const { id } = useParams<string>();
 
     return (
-        <div>
+        <div className="full-page-wrapper">
             <BackHomeButton />
             <div id="player-card-container">
                 {id ? (
