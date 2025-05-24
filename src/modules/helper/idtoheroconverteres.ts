@@ -4,10 +4,12 @@ import type { BasicHero } from "../../interfaces/HeroInterfaces";
 //fetch heros for reference...
 
 let heroList: Array<BasicHero>;
+let timeStamp: number = Date.now();
 
 export async function idToHeroName(id: string): Promise<string> {
+    const currentTime: number = Date.now();
     //if 24hrs have passed since last fetch... fetch.. else use ref list
-    if (heroList === undefined) {
+    if (!heroList || currentTime - timeStamp >= 86400 * 1000) {
         heroList = await getAllHeros();
     }
 
