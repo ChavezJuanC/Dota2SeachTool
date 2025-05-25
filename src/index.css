@@ -429,3 +429,19 @@ body {
     flex-direction: row;
     gap: 50px;
 }
+
+/* About section */
+
+#about-section {
+    width: 800px;
+    margin: auto;
+    max-width: 90%;
+    text-align: center;
+}
+
+#about-text {
+    text-align: left;
+    color: whitesmoke;
+    font-family: "Bakbak One", sans-serif;
+    font-weight: 100;
+}
