@@ -424,6 +424,8 @@ body {
     justify-content: space-between;
 }
 
-#win-rate-txt {
-    display: inline;
+#left-text-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
 }

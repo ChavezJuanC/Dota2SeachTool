@@ -47,8 +47,3 @@ function PlayerProfile() {
 }
 
 export default PlayerProfile;
-
-/*
-Fix spacing for win rate.
-start design for match section
-*/

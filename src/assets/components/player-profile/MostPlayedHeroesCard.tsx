@@ -37,18 +37,20 @@ function MostPlayedHeroesCard({ heroData }: MostPlayedHeroesCardInterface) {
                     {heroName.toUpperCase().replace("_", " ")}
                 </h3>
             </div>
-            <h3 className="banner-stats-text" id="win-rate-with-peer">
-                {+((heroData.with_games / heroData.with_win) * 10)
-                    .toFixed(2)
-                    .toString() + "%"}
-            </h3>
-            <h3
-                className="banner-stats-text mobile-optional"
-                id="total-games-with-peer"
-            >
-                {heroData.with_games}
-                {" Games"}
-            </h3>
+            <div id="left-text-wrapper">
+                <h3 className="banner-stats-text" id="win-rate-with-peer">
+                    {+((heroData.with_games / heroData.with_win) * 10)
+                        .toFixed(2)
+                        .toString() + "%"}
+                </h3>
+                <h3
+                    className="banner-stats-text mobile-optional"
+                    id="total-games-with-peer"
+                >
+                    {heroData.with_games}
+                    {" Games"}
+                </h3>
+            </div>
         </div>
     );
 }
