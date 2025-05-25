@@ -1,5 +1,6 @@
 import About from "./assets/main_routes/About";
 import Home from "./assets/main_routes/Home";
+import MatchDetails from "./assets/main_routes/MatchDetails";
 import PlayerProfile from "./assets/main_routes/PlayerProfile";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -15,6 +16,10 @@ function App() {
                     <Route
                         path="/player-profile/:id"
                         element={<PlayerProfile />}
+                    />
+                    <Route
+                        path="/matchdetails/:id"
+                        element={<MatchDetails />}
                     />
                 </Routes>
             </Router>

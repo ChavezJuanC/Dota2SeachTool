@@ -23,7 +23,7 @@ body {
 }
 
 .basic-info-text {
-    color: #8b62d3;
+    color: #a189ca;
     font-weight: 50;
     font-family: "Bakbak One", sans-serif;
 }
@@ -38,6 +38,19 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    justify-items: center;
+}
+
+.basic-card-centered-text {
+    border: solid 2px #8b62d3;
+    background-color: rgb(221, 214, 214, 0.7);
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     justify-items: center;
 }
 
@@ -444,4 +457,53 @@ body {
     color: whitesmoke;
     font-family: "Bakbak One", sans-serif;
     font-weight: 100;
+}
+
+/* Match Details */
+
+/*
+#basic-match-details-top-wrapper {
+    border: solid black 5px;
+}
+*/
+
+#match-description-container {
+    width: 60%;
+    margin: auto;
+}
+
+.match-description-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (max-width: 600px) {
+    #match-description-container {
+        width: 80%;
+    }
+}
+
+#match-score-details-wrapper {
+    text-align: center;
+}
+
+#match-score {
+    font-family: "Bakbak One", sans-serif;
+    font-size: 70px;
+    margin-top: 0;
+    padding-top: 0;
+    color: whitesmoke;
+}
+
+#winning-team-label {
+    font-family: "Bakbak One", sans-serif;
+    font-size: 30px;
+    margin-top: 0;
+    padding-top: 0;
+    position: relative;
+    bottom: 50px;
+    color: whitesmoke;
 }
