@@ -8,6 +8,7 @@ import type {
     MatchSummaryInterface,
     PeerInterface,
 } from "../../interfaces/PlayerInterfaces";
+import type { MatchDetailsInterface } from "../../interfaces/MatchInterfaces";
 
 // fetch player profile by id
 export async function getPlayerById(id: string): Promise<any> {
@@ -131,7 +132,7 @@ export async function getPlayersPeers(
     return dataSortedByGames;
 }
 
-export async function getMatchData(id: string): Promise<any> {
+export async function getMatchData(id: string): Promise<MatchDetailsInterface> {
     const res = await fetch(`${API_URL}/matches/${id}?${API_KEY}`);
 
     if (!res.ok) {
@@ -142,7 +143,7 @@ export async function getMatchData(id: string): Promise<any> {
         }
     }
 
-    const matchData: Promise<any> = await res.json();
+    const matchData: Promise<MatchDetailsInterface> = await res.json();
     return matchData;
 }
 

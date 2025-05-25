@@ -15,17 +15,22 @@ body {
     color: white;
 }
 
+.sub-section-title {
+    font-family: "Bakbak One", sans-serif;
+    font-size: 35px;
+    color: white;
+}
+
+.banner-stats-text {
+    color: #8b62d3;
+    font-weight: 50;
+    font-family: "Bakbak One", sans-serif;
+}
+
 .basic-info-label {
     color: #6c38c7;
     font-family: "Bakbak One", sans-serif;
     font-size: 20px;
-    margin: 0;
-}
-
-.basic-info-text {
-    color: #a189ca;
-    font-weight: 50;
-    font-family: "Bakbak One", sans-serif;
 }
 
 .basic-card {
@@ -57,6 +62,8 @@ body {
 .hero-image {
     max-width: 50px;
     max-height: 50px;
+    min-height: 50px;
+    min-width: 50px;
     border-radius: 100%;
     object-fit: cover;
     display: block;
@@ -342,12 +349,6 @@ body {
 
 /* Game Card */
 
-.banner-stats-text {
-    color: #8b62d3;
-    font-weight: 50;
-    font-family: "Bakbak One", sans-serif;
-}
-
 @media (max-width: 950px) {
     .mobile-optional {
         display: none;
@@ -506,4 +507,29 @@ body {
     position: relative;
     bottom: 50px;
     color: whitesmoke;
+}
+
+/* Team game feed */
+
+#team-game-feed {
+    width: 50%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+#player-game-strip {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#bottom-space {
+    height: 100px;
+}
+
+@media (max-width: 600px) {
+    #team-game-feed {
+        width: 87%;
+    }
 }

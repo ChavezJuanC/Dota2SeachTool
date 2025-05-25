@@ -9,6 +9,7 @@ import {
     getMatchData,
     getHeroByName,
 } from "../../../modules/api_interactions/main";
+import type { MatchDetailsInterface } from "../../../interfaces/MatchInterfaces";
 
 function SearchBar() {
     const [searchValue, setSearchValue] = useState<string>("");
@@ -45,10 +46,13 @@ function SearchBar() {
                 case "Match":
                     //fetch match
                     console.log("fetching match");
-                    const matchData: Promise<any> = await getMatchData(
+                    /*Find a way to avoid this fetch */
+                    const matchData: MatchDetailsInterface = await getMatchData(
                         trimmedSearchValue
                     );
-                    console.log(matchData);
+                    if (matchData) {
+                        navigate(`/matchdetails/${trimmedSearchValue}`);
+                    }
                     break;
                 case "Hero":
                     //fetch hero

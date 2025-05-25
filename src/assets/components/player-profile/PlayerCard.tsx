@@ -54,7 +54,7 @@ function PlayerCard({ id }: PlayerCardInterface) {
                 <h4 id="first-game-label" className="basic-info-label">
                     Win Rate
                 </h4>
-                <h4 id="first-game-info" className="basic-info-text">
+                <h4 id="first-game-info" className="banner-stats-text">
                     {(
                         (Number(winLossRatio?.win) /
                             (Number(winLossRatio?.win) +
@@ -68,7 +68,7 @@ function PlayerCard({ id }: PlayerCardInterface) {
                 <h4 id="win-loss-label" className="basic-info-label">
                     Win/Loss Ratio
                 </h4>
-                <h4 id="win-loss-info" className="basic-info-text">
+                <h4 id="win-loss-info" className="banner-stats-text">
                     {winLossRatio?.win}:{winLossRatio?.lose}
                 </h4>
             </div>
