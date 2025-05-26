@@ -1,6 +1,13 @@
+import type { MatchPlayerInterface } from "../../../interfaces/MatchInterfaces";
 import PlayerGameStrip from "./PlayerGameStrip";
 
-function TeamGameFeed() {
+interface TeamGameFeedInterface {
+    playersList: Array<MatchPlayerInterface>;
+}
+
+function TeamGameFeed({ playersList }: TeamGameFeedInterface) {
+    //create PlayerGameStrip components from playerList data
+
     return (
         <div id="team-game-feed">
             <h2 id="team-name" className="sub-section-title">
