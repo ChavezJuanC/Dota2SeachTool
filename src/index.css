@@ -376,7 +376,7 @@ body {
 #mostplayed-heroes-shadow-box {
     border: solid 2px whitesmoke;
     width: 600px;
-    height: 400px;
+    height: 200px;
     background-color: #05453a20;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
@@ -386,8 +386,8 @@ body {
 
 #peers-shadow-box {
     border: solid 2px whitesmoke;
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     background-color: #05453a20;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
@@ -418,7 +418,7 @@ body {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 200px) {
     #peers-shadow-box,
     #mostplayed-heroes-shadow-box {
         border: none;
@@ -539,4 +539,47 @@ body {
     flex-direction: row;
     width: 35%;
     justify-content: space-between;
+}
+
+/* Hero Profile */
+
+#hero-info-card {
+    border: solid 2px whitesmoke;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    margin: auto;
+}
+
+#hero-info-win-rates-wrapper {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 3px black;
+    gap: 100px;
+}
+
+#hero-info-image {
+    max-width: 200px;
+    max-height: 200px;
+    min-height: 200px;
+    min-width: 200px;
+    border-radius: 100%;
+    object-fit: cover;
+    display: block;
+    border: solid 2px #8b62d3;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#hero-info-card-left-side,
+#hero-info-card-right-side {
+    border: solid 3px rgb(180, 31, 31);
 }
