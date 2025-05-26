@@ -1,4 +1,5 @@
 import About from "./assets/main_routes/About";
+import HeroProfile from "./assets/main_routes/HeroProfile";
 import Home from "./assets/main_routes/Home";
 import MatchDetails from "./assets/main_routes/MatchDetails";
 import PlayerProfile from "./assets/main_routes/PlayerProfile";
@@ -21,6 +22,7 @@ function App() {
                         path="/matchdetails/:id"
                         element={<MatchDetails />}
                     />
+                    <Route path="/hero/:id" element={<HeroProfile />} />
                 </Routes>
             </Router>
         </div>
