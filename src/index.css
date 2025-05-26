@@ -533,3 +533,10 @@ body {
         width: 87%;
     }
 }
+
+#lvl-kda-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 35%;
+    justify-content: space-between;
+}

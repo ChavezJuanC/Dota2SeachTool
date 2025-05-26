@@ -24,7 +24,11 @@ function GameCard({ matchData }: MatchSummaryHelperInterce) {
     return (
         <div id="game-card" className="basic-card">
             <div id="hero-info-wrapper" className="hero-info-wrapper">
-                <img src={`/Hero_Photos/${heroName}.png`} id="hero-image" className="hero-image"/>
+                <img
+                    src={`/Hero_Photos/${heroName}.png`}
+                    id="hero-image"
+                    className="hero-image"
+                />
                 <h3 className="banner-stats-text mobile-optional">Hero Name</h3>
             </div>
             <h3 className="banner-stats-text" id="game-stats-win">

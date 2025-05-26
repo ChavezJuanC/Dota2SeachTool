@@ -45,10 +45,6 @@ function MatchDetails() {
         //[0]Radiant [1]Dire
         const teams: Array<Array<MatchPlayerInterface>> = [team1, team2];
 
-        //debug
-        console.log("Radiant : ", team1);
-        console.log("Dire : ", team2);
-
         return teams;
     }
     return (

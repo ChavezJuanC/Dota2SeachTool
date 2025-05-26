@@ -7,6 +7,13 @@ interface TeamGameFeedInterface {
 
 function TeamGameFeed({ playersList }: TeamGameFeedInterface) {
     //create PlayerGameStrip components from playerList data
+    function createPlayerGameStrips() {
+        const strips = playersList.map((strip: MatchPlayerInterface) => (
+            <PlayerGameStrip playerDetails={strip} />
+        ));
+
+        return strips;
+    }
 
     return (
         <div id="team-game-feed">
@@ -14,11 +21,7 @@ function TeamGameFeed({ playersList }: TeamGameFeedInterface) {
                 Radiant
             </h2>
             <div id="player-game-strips-container">
-                <PlayerGameStrip />
-                <PlayerGameStrip />
-                <PlayerGameStrip />
-                <PlayerGameStrip />
-                <PlayerGameStrip />
+                {createPlayerGameStrips()}
             </div>
         </div>
     );

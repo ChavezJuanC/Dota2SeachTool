@@ -16,7 +16,6 @@ function MostPlayedHeroesCard({ heroData }: MostPlayedHeroesCardInterface) {
                 const lowerCaseName = name.toLowerCase();
                 setHeroName(lowerCaseName);
             }
-            console.log(name);
         }
 
         getHeroName();
@@ -26,10 +25,7 @@ function MostPlayedHeroesCard({ heroData }: MostPlayedHeroesCardInterface) {
         <div id="most-played-heroes-card" className="basic-card">
             <div className="hero-info-wrapper" id="hero-info-wrapper2">
                 <img
-                    src={`/Hero_Photos/${
-                        /* Super rare edge case for antimage*/
-                        heroName != "anti_mage" ? heroName : "antimage"
-                    }.png`}
+                    src={`/Hero_Photos/${heroName}.png`}
                     id="hero-image2"
                     className="hero-image"
                 />

@@ -20,7 +20,7 @@ export async function idToHeroName(id: string): Promise<string> {
     }
 
     //This format matchers img fetching.. if needed will write logic for different outputs..
-    const heroName: string = hero?.localized_name.replace(/[- ]/g, "_");
+    let heroName: string = hero?.localized_name.replace(/[- ]/g, "_");
 
     return heroName;
 }
