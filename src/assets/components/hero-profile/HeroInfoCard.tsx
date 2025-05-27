@@ -1,30 +1,61 @@
-function HeroInfoCard() {
+import type { HeroStatsInterface } from "../../../interfaces/HeroInterfaces";
+
+interface HeroInfoCardHelperInterface {
+    heroStats: HeroStatsInterface;
+}
+
+function HeroInfoCard({ heroStats }: HeroInfoCardHelperInterface) {
     return (
         <div id="hero-info-card">
             <div id="hero-info-card-left-side">
-                <h3 id="hero-info-name">HeroNameHere</h3>
-                <h3 id="hero-info-attack-type">Ranged</h3>
-                <h3 id="hero-info-roles">
-                    Roles
-                    <ul id="hero-info-roles-list">
-                        <li id="hero-info-roles-list-itmes">Carry</li>
-                        <li id="hero-info-roles-list-itmes">Tank</li>
-                        <li id="hero-info-roles-list-items">Support</li>
-                    </ul>
-                </h3>
+                <img
+                    src="https://placehold.co/600x400"
+                    alt=""
+                    id="hero-info-image"
+                />
+                <div id="hero-info-win-rates-wrapper">
+                    <h3 id="pro-win-rate" className="basic-info-label-2">
+                        PWR: 00.00%
+                    </h3>
+                    <h3 id="turbo-win-rate" className="basic-info-label-2">
+                        TWR: 00.00%
+                    </h3>
+                </div>
             </div>
             <div id="hero-info-card-right-side">
-                <img src="https://placehold.co/600x400" alt="" id="hero-info-image"/>
-                <div id="hero-info-win-rates-wrapper">
-                    <h3>PWR: 00.00%</h3>
-                    <h3>TWR: 00.00%</h3>
-                </div>
+                <h3 id="hero-info-name" className="basic-info-label-2">
+                    HeroNameHere
+                </h3>
+                <h3 id="hero-info-attack-type" className="basic-info-label-2">
+                    Ranged
+                </h3>
+                <h3 id="hero-info-roles" className="basic-info-label-2">
+                    Roles
+                    <ul id="hero-info-roles-list">
+                        <li
+                            id="hero-info-roles-list-itmes"
+                            className="banner-stats-text"
+                        >
+                            Carry
+                        </li>
+                        <li
+                            id="hero-info-roles-list-itmes"
+                            className="banner-stats-text"
+                        >
+                            Tank
+                        </li>
+                        <li
+                            id="hero-info-roles-list-items"
+                            className="banner-stats-text"
+                        >
+                            Support
+                        </li>
+                    </ul>
+                </h3>
             </div>
         </div>
     );
 }
-
-
 
 /*
 

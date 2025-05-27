@@ -33,6 +33,12 @@ body {
     font-size: 20px;
 }
 
+.basic-info-label-2 {
+    color: whitesmoke;
+    font-family: "Bakbak One", sans-serif;
+    font-size: 20px;
+}
+
 .basic-card {
     border: solid 2px #8b62d3;
     background-color: rgb(221, 214, 214, 0.7);
@@ -552,8 +558,10 @@ body {
     gap: 100px;
     justify-content: center;
     align-items: center;
-    width: 800px;
+    width: 700px;
     margin: auto;
+    padding-top: 10px;
+    padding: 10px;
 }
 
 #hero-info-win-rates-wrapper {
@@ -561,8 +569,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 3px black;
-    gap: 100px;
+}
+
+#pro-win-rate {
+    margin-right: 10px;
+}
+
+#turbo-win-rate {
+    margin-left: 10px;
 }
 
 #hero-info-image {
@@ -579,7 +593,23 @@ body {
     margin-bottom: 20px;
 }
 
-#hero-info-card-left-side,
-#hero-info-card-right-side {
-    border: solid 3px rgb(180, 31, 31);
+@media (max-width: 800px) {
+    #hero-info-card {
+        width: 80%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    #hero-info-card {
+        width: 80%;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    #hero-info-card-right-side {
+        position: relative;
+        right: 90px;
+    }
 }
