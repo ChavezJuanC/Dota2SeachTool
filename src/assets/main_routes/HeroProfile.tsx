@@ -18,7 +18,7 @@ function HeroProfile() {
             try {
                 const stats = await getHeroStatsById(id ?? "");
                 setHeroStats(stats);
-                console.log(heroStats);
+                console.log(stats);
             } catch {
                 navigate("/"); //raplace this with a navagation back to home or a toast or something
             }

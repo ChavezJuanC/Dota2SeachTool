@@ -1,25 +1,40 @@
+import { useEffect, useState } from "react";
 import type { HeroStatsInterface } from "../../../interfaces/HeroInterfaces";
+import { idToHeroName } from "../../../modules/helper/idtoheroconverteres";
 
 interface HeroInfoCardHelperInterface {
     heroStats: HeroStatsInterface;
 }
 
 function HeroInfoCard({ heroStats }: HeroInfoCardHelperInterface) {
+    const [heroName, setHeroName] = useState<string>();
+
+    useEffect(() => {
+        async function getHeroName() {
+            const name = await idToHeroName(heroStats.id.toString());
+            setHeroName(name.toLowerCase());
+        }
+
+        getHeroName();
+    }, []);
+
     return (
         <div id="hero-info-card">
             <div id="hero-info-card-left-side">
                 <img
-                    src="https://placehold.co/600x400"
+                    src={`/Hero_Photos/${heroName}.png`}
                     alt=""
                     id="hero-info-image"
                 />
                 <div id="hero-info-win-rates-wrapper">
-                    <h3 id="pro-win-rate" className="basic-info-label-2">
-                        PWR: 00.00%
-                    </h3>
-                    <h3 id="turbo-win-rate" className="basic-info-label-2">
-                        TWR: 00.00%
-                    </h3>
+                    <div className="hero-win-rate-wrapper" id="pro-win-rate">
+                        <h3 className="basic-info-label-2">PWR:</h3>
+                        <h3 className="banner-stats-text">00.00%</h3>
+                    </div>
+                    <div className="hero-win-rate-wrapper" id="turbo-win-rate">
+                        <h3 className="basic-info-label-2">TWR:</h3>
+                        <h3 className="banner-stats-text">00.00%</h3>
+                    </div>
                 </div>
             </div>
             <div id="hero-info-card-right-side">
@@ -27,10 +42,15 @@ function HeroInfoCard({ heroStats }: HeroInfoCardHelperInterface) {
                     {heroStats.hero_id}
                 </h3>
                 <h3 id="hero-info-attack-type" className="basic-info-label-2">
-                    {heroStats.attack_type}
+                    {heroStats.attack_type.toUpperCase()}
+                </h3>
+                <h3 id="hero-info-primary-attr" className="basic-info-label-2">
+                    {heroStats.primary_attr == "all"
+                        ? "GLOBAL"
+                        : heroStats.primary_attr}
                 </h3>
                 <h3 id="hero-info-roles" className="basic-info-label-2">
-                    Roles
+                    ROLES
                     <ul id="hero-info-roles-list">
                         <li
                             id="hero-info-roles-list-itmes"
@@ -57,10 +77,4 @@ function HeroInfoCard({ heroStats }: HeroInfoCardHelperInterface) {
     );
 }
 
-/*
-
-Make sure hero card component is dynamic for all screen sizes
-feed it dynamically
-
-*/
 export default HeroInfoCard;
