@@ -382,7 +382,7 @@ body {
 #mostplayed-heroes-shadow-box {
     border: solid 2px whitesmoke;
     width: 600px;
-    height: 200px;
+    height: 400px;
     background-color: #05453a20;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
@@ -392,8 +392,8 @@ body {
 
 #peers-shadow-box {
     border: solid 2px whitesmoke;
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
     background-color: #05453a20;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;

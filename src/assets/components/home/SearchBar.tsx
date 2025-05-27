@@ -9,7 +9,6 @@ import {
     getMatchData,
     getHeroByName,
 } from "../../../modules/api_interactions/main";
-import type { MatchDetailsInterface } from "../../../interfaces/MatchInterfaces";
 
 function SearchBar() {
     const [searchValue, setSearchValue] = useState<string>("");
@@ -36,29 +35,22 @@ function SearchBar() {
                 case "Player":
                     //fetch player
                     console.log("fetching player");
-                    const playerData: Promise<any> = await getPlayerById(
-                        searchValue.trim()
-                    );
-
-                    console.log(playerData);
+                    // this is needed for the toast notification.. alternative: fetch after routing.. but on error we would need to redirect.. so it's still 1 call for another
+                    await getPlayerById(searchValue.trim());
                     navigate(`/player-profile/${trimmedSearchValue}`);
                     break;
                 case "Match":
                     //fetch match
                     console.log("fetching match");
-                    /*Find a way to avoid this fetch */
-                    const matchData: MatchDetailsInterface = await getMatchData(
-                        trimmedSearchValue
-                    );
-                    if (matchData) {
-                        navigate(`/matchdetails/${trimmedSearchValue}`);
-                    }
+                    await getMatchData(trimmedSearchValue);
+                    navigate(`/matchdetails/${trimmedSearchValue}`);
                     break;
                 case "Hero":
                     //fetch hero
                     console.log("fetching hero");
-                    const heroData = await getHeroByName(trimmedSearchValue);
-                    console.log(heroData);
+                    //this call is needed to convert name into id
+                    const hero = await getHeroByName(trimmedSearchValue);
+                    navigate(`/hero/${hero.id}`);
                     break;
             }
         } catch (error) {

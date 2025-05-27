@@ -24,10 +24,10 @@ function HeroInfoCard({ heroStats }: HeroInfoCardHelperInterface) {
             </div>
             <div id="hero-info-card-right-side">
                 <h3 id="hero-info-name" className="basic-info-label-2">
-                    HeroNameHere
+                    {heroStats.hero_id}
                 </h3>
                 <h3 id="hero-info-attack-type" className="basic-info-label-2">
-                    Ranged
+                    {heroStats.attack_type}
                 </h3>
                 <h3 id="hero-info-roles" className="basic-info-label-2">
                     Roles

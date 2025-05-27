@@ -1,6 +1,7 @@
 import { API_KEY, API_URL } from "../../constants/main";
 import type {
     BasicHero,
+    HeroStatsInterface,
     MostPlayedHeroesInterface,
 } from "../../interfaces/HeroInterfaces";
 import type {
@@ -164,7 +165,11 @@ export async function getHeroByName(heroName: string): Promise<BasicHero> {
 
     const heroFound: BasicHero = allHeroData.find(
         (hero: BasicHero) =>
-            hero.localized_name.trim().toLowerCase().replace(" ", "") ==
+            hero.localized_name
+                .trim()
+                .toLowerCase()
+                .replace(" ", "")
+                .replace("-", "") ==
             heroName.trim().toLowerCase().replace(" ", "")
     );
 
@@ -191,6 +196,35 @@ export async function getAllHeros(): Promise<Array<BasicHero>> {
     const allHeroData: Promise<Array<BasicHero>> = await res.json();
 
     return allHeroData;
+}
+
+//get hero stats
+export async function getHeroStatsById(
+    id: string
+): Promise<HeroStatsInterface> {
+    const res = await fetch(`${API_URL}/heroStats?${API_KEY}`);
+
+    if (!res.ok) {
+        if (res.status == 400) {
+            throw new Error("Hero stats not found");
+        } else {
+            throw new Error("Error fetching hero stats");
+        }
+    }
+
+    const allHeroStats: Array<HeroStatsInterface> = await res.json();
+
+    const foundHero = allHeroStats.find(
+        (hero: HeroStatsInterface) => hero.id.toString() === id
+    );
+
+    if (!foundHero) {
+        throw new Error(`Hero with id ${id} not found`);
+    }
+
+    const requestedHero: HeroStatsInterface = foundHero;
+
+    return requestedHero;
 }
 
 //https://api.opendota.com/api/players/{account_id}/heroes
