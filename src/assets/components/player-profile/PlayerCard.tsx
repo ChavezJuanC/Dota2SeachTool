@@ -26,7 +26,7 @@ function PlayerCard({ id }: PlayerCardInterface) {
             }
         }
         setData();
-    }, []);
+    }, [id]);
 
     console.log(id);
     return (

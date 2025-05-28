@@ -28,7 +28,7 @@ function GamesFeed({ id }: PlayerCardInterface) {
         }
 
         fetchData();
-    }, []);
+    }, [id]);
 
     return (
         <div>

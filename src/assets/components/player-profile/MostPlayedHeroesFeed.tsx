@@ -26,7 +26,7 @@ function MostPlayedHeroesFeed({ id }: PlayerCardInterface) {
         }
 
         fetchHeroesData();
-    }, []);
+    }, [id]);
 
     return <div>{createMostPlayedHeroesCards()}</div>;
 }

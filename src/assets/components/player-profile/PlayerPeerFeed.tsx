@@ -24,7 +24,7 @@ function PlayerPeerFeed({ id }: PlayerCardInterface) {
         }
 
         getPeers();
-    }, []);
+    }, [id]);
 
     return <div>{allPeers && createPeerCards(allPeers)}</div>;
 }

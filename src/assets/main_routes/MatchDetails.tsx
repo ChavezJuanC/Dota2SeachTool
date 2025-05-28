@@ -26,7 +26,7 @@ function MatchDetails() {
         }
 
         getMatchDetails();
-    }, []);
+    }, [id]);
 
     function splitTeamData(
         playersArray: Array<MatchPlayerInterface>
