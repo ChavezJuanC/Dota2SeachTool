@@ -9,6 +9,15 @@ body {
 
 /* shared classes */
 
+.icon-svg {
+    color: whitesmoke;
+    filter: invert(1);
+    max-width: 30px;
+    max-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .main-section-title {
     font-family: "Bakbak One", sans-serif;
     font-size: 45px;
@@ -369,6 +378,12 @@ body {
     }
 }
 
+@media (max-width: 520px) {
+    .mini-screen-optional {
+        display: none;
+    }
+}
+
 /* Bottom Section */
 
 #bottom-section-wrapper {
@@ -665,13 +680,15 @@ body {
 
 #hero-feed-by-win-rate-container {
     border: solid 5px white;
-    margin-top: 100vh;
+    margin-top: 90vh;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #scroll-down-to-heroes-btn {
     position: relative;
-    bottom: 40vh;
-    border: solid 3px pink;
+    top: 60vh;
     display: flex;
     flex: auto;
     justify-content: center;
@@ -684,7 +701,37 @@ body {
     font-size: x-large;
     animation: bounce 1s infinite;
     color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
+
+#heroes-by-win-rate-little {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media (max-width: 1100px) {
+    #hero-feed-by-win-rate-container {
+        border: solid 5px rgb(85, 13, 13);
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    #hero-feed-by-win-rate-container {
+        border: solid 5px rgb(13, 85, 37);
+    }
+}
+
+@media (max-width: 400px) {
+    #hero-feed-by-win-rate-container {
+        border: solid 5px rgb(13, 32, 85);
+    }
+}
+
+/* Animations */
 
 @keyframes bounce {
     0%,
