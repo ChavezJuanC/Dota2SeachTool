@@ -29,29 +29,35 @@ function GameCard({ matchData }: MatchSummaryHelperInterce) {
                     id="hero-image"
                     className="hero-image"
                 />
-                <h3 className="banner-stats-text mobile-optional">Hero Name</h3>
+                <h3 className="banner-stats-text mobile-optional">
+                    {heroName.toUpperCase().replace("_", " ")}
+                </h3>
             </div>
-            <h3 className="banner-stats-text" id="game-stats-win">
-                {(matchData.player_slot < 128 && matchData.radiant_win) ||
-                (matchData.player_slot >= 128 && !matchData.radiant_win)
-                    ? "Win"
-                    : "Loss"}
-            </h3>
-            <h3 className="banner-stats-text" id="game-stats-kda">
-                {matchData.kills} / {matchData.deaths} / {matchData.assists}
-            </h3>
-            <h3
-                className="banner-stats-text mobile-optional"
-                id="game-stats-game-duration"
-            >
-                59:00
-            </h3>
-            <h3
-                className="banner-stats-text mobile-optional"
-                id="game-stats-patch"
-            >
-                7.35
-            </h3>
+            <div className="hero-info-wrapper-2">
+                <h3 className="banner-stats-text" id="game-stats-win">
+                    {(matchData.player_slot < 128 && matchData.radiant_win) ||
+                    (matchData.player_slot >= 128 && !matchData.radiant_win)
+                        ? "Win"
+                        : "Loss"}
+                </h3>
+                <h3 className="banner-stats-text" id="game-stats-kda">
+                    {matchData.kills.toString().padStart(2, "0")} /{" "}
+                    {matchData.deaths.toString().padStart(2, "0")} /{" "}
+                    {matchData.assists.toString().padStart(2, "0")}
+                </h3>
+                <h3
+                    className="banner-stats-text mobile-optional"
+                    id="game-stats-game-duration"
+                >
+                    59:00
+                </h3>
+                <h3
+                    className="banner-stats-text mobile-optional"
+                    id="game-stats-patch"
+                >
+                    7.35
+                </h3>
+            </div>
         </div>
     );
 }

@@ -35,7 +35,7 @@ function MostPlayedHeroesCard({ heroData }: MostPlayedHeroesCardInterface) {
             </div>
             <div id="left-text-wrapper">
                 <h3 className="banner-stats-text" id="win-rate-with-peer">
-                    {+((heroData.with_games / heroData.with_win) * 10)
+                    {+((heroData.win / heroData.games) * 100)
                         .toFixed(2)
                         .toString() + "%"}
                 </h3>

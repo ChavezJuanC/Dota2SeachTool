@@ -37,8 +37,9 @@ function PlayerGameStrip({ playerDetails }: PlayerGameStripInterface) {
                     LVL {playerDetails.level}
                 </h3>
                 <h3 className="banner-stats-text">
-                    {playerDetails.kills}/{playerDetails.deaths}/
-                    {playerDetails.assists}
+                    {playerDetails.kills.toString().padStart(2, "0")}/
+                    {playerDetails.deaths.toString().padStart(2, "0")}/
+                    {playerDetails.assists.toString().padStart(2, "0")}
                 </h3>
             </div>
         </div>

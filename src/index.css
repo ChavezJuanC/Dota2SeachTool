@@ -83,6 +83,13 @@ body {
     gap: 20px;
 }
 
+.hero-info-wrapper-2 {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    gap: 60px;
+}
+
 @media (max-width: 850px) {
     .main-section-title {
         font-size: 35px;
@@ -129,6 +136,7 @@ body {
 }
 
 /* styling for the hero section element */
+
 #hero-section-container {
     position: absolute;
     top: 30%;
@@ -587,7 +595,7 @@ body {
     min-height: 150px;
     min-width: 150px;
     border-radius: 100%;
-    object-fit: cover;
+    object-fit: fill;
     display: block;
     margin: auto;
     border: solid 2px #8b62d3;
