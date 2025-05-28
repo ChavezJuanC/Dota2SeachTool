@@ -4,27 +4,20 @@ import HeroInfoCard from "../components/hero-profile/HeroInfoCard";
 import type { HeroStatsInterface } from "../../interfaces/HeroInterfaces";
 import { getHeroStatsById } from "../../modules/api_interactions/main";
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 function HeroProfile() {
     const { id } = useParams<string>();
-    const navigate = useNavigate();
 
     //fetch heroStatsHere...
     const [heroStats, setHeroStats] = useState<HeroStatsInterface>();
 
     useEffect(() => {
-        async function getHerStats() {
-            try {
-                const stats = await getHeroStatsById(id ?? "");
-                setHeroStats(stats);
-            } catch {
-                navigate("/"); //raplace this with a navagation back to home or a toast or something
-            }
+        async function getHeroStats() {
+            const stats = await getHeroStatsById(id ?? "");
+            setHeroStats(stats);
         }
-
-        getHerStats();
-    }, []);
+        getHeroStats();
+    }, [id]);
 
     return (
         <div>
