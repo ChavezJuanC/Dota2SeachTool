@@ -660,3 +660,40 @@ body {
         bottom: 20px;
     }
 }
+
+/* Heroes Feed By Win Rate */
+
+#hero-feed-by-win-rate-container {
+    border: solid 5px white;
+    margin-top: 100vh;
+}
+
+#scroll-down-to-heroes-btn {
+    position: relative;
+    bottom: 40vh;
+    border: solid 3px pink;
+    display: flex;
+    flex: auto;
+    justify-content: center;
+}
+
+#heroes-by-win-rate-button {
+    background: rgba(255, 255, 255, 0);
+    border: rgba(255, 255, 255, 0);
+    font-family: "Bakbak One", sans-serif;
+    font-size: x-large;
+    animation: bounce 1s infinite;
+    color: whitesmoke;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(-10%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
