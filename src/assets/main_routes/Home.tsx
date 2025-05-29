@@ -12,7 +12,9 @@ function Home() {
             </div>
             <div>
                 <ScrollButton />
-                <HeroFeedByWinRate />
+                <div id="hero-win-rate-home-container">
+                    <HeroFeedByWinRate />
+                </div>
             </div>
         </div>
     );

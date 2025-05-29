@@ -36,6 +36,7 @@ function HeroFeedByWinRateCard({ heroStats }: HeroFeedByWinHelperInterface) {
                             .toFixed(2)
                             .toString()
                             .padEnd(2, "0")}
+                        %
                     </h3>
                 </div>
                 <div className="hero-info-wrapper">
@@ -47,6 +48,7 @@ function HeroFeedByWinRateCard({ heroStats }: HeroFeedByWinHelperInterface) {
                             .toFixed(2)
                             .toString()
                             .padEnd(2, "0")}
+                        %
                     </h3>
                 </div>
             </div>

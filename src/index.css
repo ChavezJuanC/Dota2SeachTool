@@ -573,7 +573,7 @@ body {
 /* Hero Profile */
 
 #hero-info-card {
-    border: solid 2px whitesmoke;
+    border: solid 2px #8b62d3;
     border-radius: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background-color: rgb(221, 214, 214, 0.7);
@@ -598,10 +598,12 @@ body {
 
 #pro-win-rate {
     margin-right: 10px;
+    border: 2px white solid;
 }
 
 #turbo-win-rate {
     margin-left: 10px;
+    border: 2px white solid;
 }
 
 #hero-info-image {
@@ -609,8 +611,8 @@ body {
     max-height: 150px;
     min-height: 150px;
     min-width: 150px;
-    border-radius: 100%;
     object-fit: fill;
+    border-radius: 10px;
     display: block;
     margin: auto;
     border: solid 2px #8b62d3;
@@ -673,13 +675,24 @@ body {
     #turbo-win-rate {
         position: relative;
         bottom: 20px;
+        margin-left: 0px;
+    }
+
+    #pro-win-rate {
+        margin-right: 0px;
     }
 }
 
 /* Heroes Feed By Win Rate */
+#hero-win-rate-home-container {
+    margin-top: 80vh;
+}
+
+#hero-win-rate-hero-profile-container {
+    margin-top: 15vh;
+}
 
 #hero-feed-by-win-rate-container {
-    margin-top: 90vh;
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
