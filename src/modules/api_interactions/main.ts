@@ -198,6 +198,9 @@ export async function getAllHeros(): Promise<Array<BasicHero>> {
     return allHeroData;
 }
 
+
+/////PRIORITY GIX HERE!!!!!//////
+/// Fetch 1 time and than use a function to map through data..
 //get hero stats
 export async function getHeroStatsById(
     id: string
