@@ -12,7 +12,6 @@ function HeroFeedByWinRateCard({ heroStats }: HeroFeedByWinHelperInterface) {
     useEffect(() => {
         const name = idToHeroName(heroStats.id.toString());
         setHeroName(name);
-        console.log(name);
     }, []);
 
     return (
@@ -20,7 +19,7 @@ function HeroFeedByWinRateCard({ heroStats }: HeroFeedByWinHelperInterface) {
             <div id="hero-by-winrate-card">
                 <div className="hero-info-wrapper">
                     <img
-                        src={`/Hero_Photos/${heroName}.png`}
+                        src={`/Hero_Photos/${heroName?.toLowerCase()}.png`}
                         alt=""
                         className="hero-image"
                     />
@@ -32,14 +31,22 @@ function HeroFeedByWinRateCard({ heroStats }: HeroFeedByWinHelperInterface) {
             <div id="hero-win-rates-wrapper">
                 <div className="hero-info-wrapper">
                     <h3 className="basic-info-label">Turbo:</h3>
-                    <h3 className="banner-stats-text">99.99%</h3>
+                    <h3 className="banner-stats-text">
+                        {((heroStats.turbo_wins / heroStats.turbo_picks) * 100)
+                            .toFixed(2)
+                            .toString()
+                            .padEnd(2, "0")}
+                    </h3>
                 </div>
                 <div className="hero-info-wrapper">
                     <h3 className="basic-info-label mini-screen-optional">
-                        Pro Games:{" "}
+                        Pro Games:
                     </h3>
                     <h3 className="banner-stats-text mini-screen-optional">
-                        99.99%
+                        {((heroStats.pro_win / heroStats.pro_pick) * 100)
+                            .toFixed(2)
+                            .toString()
+                            .padEnd(2, "0")}
                     </h3>
                 </div>
             </div>
