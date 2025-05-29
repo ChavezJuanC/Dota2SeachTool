@@ -76,3 +76,4 @@ export interface HeroStatsInterface {
     "8_pick": number;
     "8_win": number;
 }
+

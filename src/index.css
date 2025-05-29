@@ -378,7 +378,7 @@ body {
     }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 616px) {
     .mini-screen-optional {
         display: none;
     }
@@ -745,22 +745,32 @@ body {
     border-radius: 10px;
 }
 
+#hero-win-rates-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+}
+
 @media (max-width: 1100px) {
     #hero-feed-by-win-rate-container {
-        border: solid 5px rgb(85, 13, 13);
         max-width: 90%;
     }
 }
 
-@media (max-width: 600px) {
-    #hero-feed-by-win-rate-container {
-        border: solid 5px rgb(13, 85, 37);
+@media (max-width: 950px) {
+    #hero-win-rates-wrapper {
+        margin: auto;
+        justify-content: space-between;
+        width: 75%;
     }
 }
 
-@media (max-width: 400px) {
-    #hero-feed-by-win-rate-container {
-        border: solid 5px rgb(13, 32, 85);
+@media (max-width: 616px) {
+    #hero-win-rates-wrapper {
+        margin: auto;
+        justify-content: center;
+        width: 75%;
     }
 }
 

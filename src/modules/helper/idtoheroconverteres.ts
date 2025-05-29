@@ -1,21 +1,12 @@
-import { getAllHeros } from "../api_interactions/main";
+import { HeroIdConstants } from "../../constants/heroConstants";
 import type { BasicHero } from "../../interfaces/HeroInterfaces";
 
-//fetch heros for reference...
+export function idToHeroName(id: string): string {
+    const hero = HeroIdConstants.find(
+        (hero: BasicHero) => hero.id.toString() == id
+    );
 
-let heroList: Array<BasicHero>;
-let timeStamp: number = Date.now();
-
-export async function idToHeroName(id: string): Promise<string> {
-    const currentTime: number = Date.now();
-    //if 24hrs have passed since last fetch... fetch.. else use ref list
-    if (!heroList || currentTime - timeStamp >= 86400 * 1000) {
-        heroList = await getAllHeros();
-    }
-
-    const hero = heroList.find((hero) => hero.id.toString() == id);
-
-    if (!hero || !hero.localized_name) {
+    if (!hero) {
         throw new Error(`Hero with id ${id} not found.`);
     }
 

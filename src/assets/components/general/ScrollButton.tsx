@@ -11,7 +11,7 @@ function ScrollButton() {
         <div id="scroll-down-to-heroes-btn">
             <button
                 id="heroes-by-win-rate-button"
-                onClick={() => scrollToSection("hero-by-win-rate-feed-wrapper")}
+                onClick={() => scrollToSection("heroes-by-win-rate-title")}
             >
                 <img src="/Icons/arrow-down.svg" className="icon-svg" />
                 Win Rates

@@ -198,10 +198,7 @@ export async function getAllHeros(): Promise<Array<BasicHero>> {
     return allHeroData;
 }
 
-
-/////PRIORITY GIX HERE!!!!!//////
-/// Fetch 1 time and than use a function to map through data..
-//get hero stats
+//get hero stats by id
 export async function getHeroStatsById(
     id: string
 ): Promise<HeroStatsInterface> {
@@ -228,6 +225,23 @@ export async function getHeroStatsById(
     const requestedHero: HeroStatsInterface = foundHero;
 
     return requestedHero;
+}
+
+//get all hero stats
+export async function getAllHeroStats(): Promise<Array<HeroStatsInterface>> {
+    const res = await fetch(`${API_URL}/heroStats?${API_KEY}`);
+
+    if (!res.ok) {
+        if (res.status == 400) {
+            throw new Error("Hero stats not found");
+        } else {
+            throw new Error("Error fetching hero stats");
+        }
+    }
+
+    const allHeroStats: Array<HeroStatsInterface> = await res.json();
+
+    return allHeroStats;
 }
 
 //https://api.opendota.com/api/players/{account_id}/heroes
