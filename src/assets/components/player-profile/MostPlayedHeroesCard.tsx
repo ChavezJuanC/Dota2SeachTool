@@ -23,13 +23,16 @@ function MostPlayedHeroesCard({ heroData }: MostPlayedHeroesCardInterface) {
 
     return (
         <div id="most-played-heroes-card" className="basic-card">
-            <div className="hero-info-wrapper" id="hero-info-wrapper2">
+            <div className="hero-info-wrapper-2">
                 <img
                     src={`/Hero_Photos/${heroName}.png`}
                     id="hero-image2"
                     className="hero-image"
                 />
-                <h3 className="banner-stats-text">
+                <h3
+                    className="banner-stats-text mini-screen-optional"
+                    id="hero-name-most-played-heroes"
+                >
                     {heroName.toUpperCase().replace("_", " ")}
                 </h3>
             </div>

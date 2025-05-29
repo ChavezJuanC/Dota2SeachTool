@@ -34,15 +34,3 @@ function HeroProfile() {
 }
 
 export default HeroProfile;
-
-/*  
-
-To-Do
-
-HeroInfoCard ready for fetch
-
-FIX FOR DOUBLE FETCHING ROUTES
--if hero/match/etc doesnt exist on useEffect for route.. navigate back to home and toast.. 
-
-
-*/

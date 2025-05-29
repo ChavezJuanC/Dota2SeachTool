@@ -109,6 +109,15 @@ body {
     .main-section-title {
         font-size: 30px;
     }
+    .hero-info-wrapper-2 {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero-info-wrapper-2 {
+        gap: 10px;
+    }
 }
 
 /* styling for the root element */
@@ -447,10 +456,10 @@ body {
     }
 }
 
-@media (max-width: 200px) {
+@media (max-width: 400px) {
     #peers-shadow-box,
     #mostplayed-heroes-shadow-box {
-        border: none;
+        width: 310px;
     }
 }
 
