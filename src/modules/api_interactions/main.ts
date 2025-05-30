@@ -1,4 +1,4 @@
-import { API_KEY, API_URL } from "../../constants/main";
+import { API_URL } from "../../constants/main";
 import type {
     BasicHero,
     HeroStatsInterface,
@@ -13,7 +13,7 @@ import type { MatchDetailsInterface } from "../../interfaces/MatchInterfaces";
 
 // fetch player profile by id
 export async function getPlayerById(id: string): Promise<any> {
-    const res = await fetch(`${API_URL}/players/${id}?${API_KEY}`);
+    const res = await fetch(`${API_URL}/players/${id}`);
 
     if (!res.ok) {
         if (res.status === 404) {
@@ -32,7 +32,7 @@ export async function getPlayersWinLossRatio(
     id: string
 ): Promise<PlayerWinLossInterface> {
     const res = await fetch(
-        `${API_URL}/players/${id}/wl/?significant=0?${API_KEY}`
+        `${API_URL}/players/${id}/wl/?significant=0`
     );
     if (!res.ok) {
         if (res.status === 400) {
@@ -51,7 +51,7 @@ export async function getLastTwentyGames(
     id: string
 ): Promise<Array<MatchSummaryInterface>> {
     const res = await fetch(
-        `${API_URL}/players/${id}/recentmatches/?significant=0?${API_KEY}`
+        `${API_URL}/players/${id}/recentmatches/?significant=0`
     );
 
     if (!res.ok) {
@@ -72,7 +72,7 @@ export async function getNextTenGames(
     offset: string
 ): Promise<any> {
     const res = await fetch(
-        `${API_URL}/players/${id}/matches/?significant=0&offset=${offset}?${API_KEY}`
+        `${API_URL}/players/${id}/matches/?significant=0&offset=${offset}`
     );
 
     if (!res.ok) {
@@ -92,7 +92,7 @@ export async function getPlayerMostPlayedHeroes(
     id: string
 ): Promise<Array<MostPlayedHeroesInterface>> {
     const res = await fetch(
-        `${API_URL}/players/${id}/heroes/?significant=0?${API_KEY}`
+        `${API_URL}/players/${id}/heroes/?significant=0`
     );
 
     if (!res.ok) {
@@ -115,7 +115,7 @@ export async function getPlayerMostPlayedHeroes(
 export async function getPlayersPeers(
     id: string
 ): Promise<Array<PeerInterface>> {
-    const res = await fetch(`${API_URL}/players/${id}/peers?${API_KEY}`);
+    const res = await fetch(`${API_URL}/players/${id}/peers`);
 
     if (!res.ok) {
         if (res.status === 400) {
@@ -134,7 +134,7 @@ export async function getPlayersPeers(
 }
 
 export async function getMatchData(id: string): Promise<MatchDetailsInterface> {
-    const res = await fetch(`${API_URL}/matches/${id}?${API_KEY}`);
+    const res = await fetch(`${API_URL}/matches/${id}`);
 
     if (!res.ok) {
         if (res.status == 400) {
@@ -151,7 +151,7 @@ export async function getMatchData(id: string): Promise<MatchDetailsInterface> {
 //improve this function to remove _ from the string //result = str.replaceAll("l", ""); //
 
 export async function getHeroByName(heroName: string): Promise<BasicHero> {
-    const res = await fetch(`${API_URL}/heroes/?${API_KEY}`);
+    const res = await fetch(`${API_URL}/heroes/`);
 
     if (!res.ok) {
         if (res.status == 400) {
@@ -183,7 +183,7 @@ export async function getHeroByName(heroName: string): Promise<BasicHero> {
 //get all heros
 
 export async function getAllHeros(): Promise<Array<BasicHero>> {
-    const res = await fetch(`${API_URL}/heroes?${API_KEY}`);
+    const res = await fetch(`${API_URL}/heroes`);
 
     if (!res.ok) {
         if (res.status == 400) {
@@ -202,7 +202,7 @@ export async function getAllHeros(): Promise<Array<BasicHero>> {
 export async function getHeroStatsById(
     id: string
 ): Promise<HeroStatsInterface> {
-    const res = await fetch(`${API_URL}/heroStats?${API_KEY}`);
+    const res = await fetch(`${API_URL}/heroStats`);
 
     if (!res.ok) {
         if (res.status == 400) {
@@ -229,7 +229,7 @@ export async function getHeroStatsById(
 
 //get all hero stats
 export async function getAllHeroStats(): Promise<Array<HeroStatsInterface>> {
-    const res = await fetch(`${API_URL}/heroStats?${API_KEY}`);
+    const res = await fetch(`${API_URL}/heroStats`);
 
     if (!res.ok) {
         if (res.status == 400) {

@@ -54,14 +54,14 @@ function HeroInfoCard({ heroStats }: HeroInfoCardHelperInterface) {
     }
 
     useEffect(() => {
-        async function getHeroName() {
-            const name = await idToHeroName(heroStats.id.toString());
+        function getHeroName() {
+            const name = idToHeroName(heroStats.id.toString());
             setHeroName(name.toLowerCase());
         }
 
         getHeroName();
         convertAttribute(heroStats.primary_attr);
-    }, []);
+    }, [heroStats]);
 
     return (
         <div id="hero-info-card">
