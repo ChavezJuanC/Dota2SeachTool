@@ -14,6 +14,8 @@ import type { BasicHero } from "../../../interfaces/HeroInterfaces";
 function SearchBar() {
     const [searchValue, setSearchValue] = useState<string>("");
     const [searchType, setSearchType] = useState<string>("Player");
+    const [searchBarText, setSearchBarText] =
+        useState<string>("Enter played id...");
 
     //navigation
     const navigate = useNavigate();
@@ -21,10 +23,27 @@ function SearchBar() {
     function handleSearch(): void {
         // Handle the search logic here
         if (searchValue.trim() === "") {
-            console.log("Please enter a search term.");
             return;
         } else {
             handleSearchRequest(searchType);
+        }
+    }
+
+    function handleSelectionType(event: React.ChangeEvent<HTMLSelectElement>) {
+        let searchType: string = event.target.value;
+        setSearchType(searchType);
+
+        switch (searchType) {
+            case "Player":
+                setSearchBarText("Enter Player ID...");
+                break;
+            case "Match":
+                setSearchBarText("Enter Match ID...");
+                break;
+
+            case "Hero":
+                setSearchBarText("Enter hero name...");
+                break;
         }
     }
 
@@ -71,7 +90,7 @@ function SearchBar() {
             }
         } catch (error) {
             console.error("There was an issue with your request. ", error);
-            toast.error(`${searchType} not found!`, {
+            toast.error(`${queryType} not found!`, {
                 iconTheme: {
                     primary: "#ffffff",
                     secondary: "#732f81",
@@ -86,7 +105,7 @@ function SearchBar() {
                 <input
                     type="text"
                     id="search-bar"
-                    placeholder="Search..."
+                    placeholder={searchBarText}
                     value={searchValue}
                     onChange={(e) => setSearchValue(e.target.value)}
                     onKeyDown={(e) => {
@@ -99,7 +118,7 @@ function SearchBar() {
                     <select
                         id="search-type-menu"
                         value={searchType}
-                        onChange={(e) => setSearchType(e.target.value)}
+                        onChange={(e) => handleSelectionType(e)}
                     >
                         <option value="Player">Player</option>
                         <option value="Match">Match</option>
