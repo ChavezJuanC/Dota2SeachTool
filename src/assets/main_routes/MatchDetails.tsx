@@ -19,6 +19,8 @@ function MatchDetails() {
     const [matchDetails, setMatchDeatils] = useState<MatchDetailsInterface>();
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+
         async function getMatchDetails() {
             const data: MatchDetailsInterface = await getMatchData(id ?? "");
             setMatchDeatils(data);

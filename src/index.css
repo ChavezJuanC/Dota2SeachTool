@@ -436,10 +436,7 @@ body {
 #mostplayed-heroes-title,
 #peers-title {
     margin-bottom: 65px;
-}
-
-@media (max-width: 650px) {
-    #mostplayed-heroes-shadow-box {
+v      #mostplayed-heroes-shadow-box {
         width: 460px;
         margin-left: auto;
         margin-right: auto;
@@ -607,12 +604,10 @@ body {
 
 #pro-win-rate {
     margin-right: 10px;
-    border: 2px white solid;
 }
 
 #turbo-win-rate {
     margin-left: 10px;
-    border: 2px white solid;
 }
 
 #hero-info-image {

@@ -10,8 +10,8 @@ function MostPlayedHeroesCard({ heroData }: MostPlayedHeroesCardInterface) {
     const [heroName, setHeroName] = useState<string>("");
 
     useEffect(() => {
-        async function getHeroName() {
-            const name = await idToHeroName(heroData.hero_id.toString());
+        function getHeroName() {
+            const name = idToHeroName(heroData.hero_id.toString());
             if (name) {
                 const lowerCaseName = name.toLowerCase();
                 setHeroName(lowerCaseName);
@@ -33,7 +33,7 @@ function MostPlayedHeroesCard({ heroData }: MostPlayedHeroesCardInterface) {
                     className="banner-stats-text mini-screen-optional"
                     id="hero-name-most-played-heroes"
                 >
-                    {heroName.toUpperCase().replace("_", " ")}
+                    {heroName.toUpperCase().replace(/_/g, " ")}
                 </h3>
             </div>
             <div id="left-text-wrapper">

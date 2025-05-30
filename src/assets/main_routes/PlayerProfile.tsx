@@ -4,9 +4,14 @@ import BackHomeButton from "../components/general/BackHomeButton";
 import GamesFeed from "../components/player-profile/GamesFeed";
 import PlayerPeerFeed from "../components/player-profile/PlayerPeerFeed";
 import MostPlayedHeroesFeed from "../components/player-profile/MostPlayedHeroesFeed";
+import { useEffect } from "react";
 
 function PlayerProfile() {
     const { id } = useParams<string>();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className="full-page-wrapper">

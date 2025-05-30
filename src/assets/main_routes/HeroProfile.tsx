@@ -13,6 +13,8 @@ function HeroProfile() {
     const [heroStats, setHeroStats] = useState<HeroStatsInterface>();
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+
         async function getHeroStats() {
             const stats = await getHeroStatsById(id ?? "");
             setHeroStats(stats);

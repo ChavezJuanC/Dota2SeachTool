@@ -7,8 +7,9 @@ import { useNavigate } from "react-router-dom";
 import {
     getPlayerById,
     getMatchData,
-    getHeroByName,
 } from "../../../modules/api_interactions/main";
+import { HeroIdConstants } from "../../../constants/heroConstants";
+import type { BasicHero } from "../../../interfaces/HeroInterfaces";
 
 function SearchBar() {
     const [searchValue, setSearchValue] = useState<string>("");
@@ -46,11 +47,26 @@ function SearchBar() {
                     navigate(`/matchdetails/${trimmedSearchValue}`);
                     break;
                 case "Hero":
-                    //fetch hero
-                    console.log("fetching hero");
-                    //this call is needed to convert name into id
-                    const hero = await getHeroByName(trimmedSearchValue);
-                    navigate(`/hero/${hero.id}`);
+                    //search for hero name, if match found.. fetch.. saves API calls :D
+                    const hero = HeroIdConstants.find((hero: BasicHero) => {
+                        console.log(
+                            hero.name.replace(/_/g, "").toLowerCase().slice(11),
+                            trimmedSearchValue.toLowerCase().replace(/ /g, "")
+                        );
+                        return (
+                            hero.name
+                                .replace(/_/g, "")
+                                .toLowerCase()
+                                .slice(11) ==
+                            trimmedSearchValue.toLowerCase().replace(/ /g, "")
+                        );
+                    });
+
+                    if (!hero) {
+                        throw new Error("invalid hero name");
+                    }
+
+                    navigate(`/hero/${hero?.id}`);
                     break;
             }
         } catch (error) {
