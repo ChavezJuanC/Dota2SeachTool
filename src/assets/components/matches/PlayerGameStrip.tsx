@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { MatchPlayerInterface } from "../../../interfaces/MatchInterfaces";
 import { idToHeroName } from "../../../modules/helper/idtoheroconverteres";
+import { useNavigate } from "react-router-dom";
 
 interface PlayerGameStripInterface {
     playerDetails: MatchPlayerInterface;
@@ -8,6 +9,9 @@ interface PlayerGameStripInterface {
 
 function PlayerGameStrip({ playerDetails }: PlayerGameStripInterface) {
     const [heroName, setHeroName] = useState<string>();
+
+    const navigate = useNavigate();
+
     useEffect(() => {
         async function createHeroName() {
             const name = await idToHeroName(playerDetails.hero_id.toString());
@@ -24,9 +28,18 @@ function PlayerGameStrip({ playerDetails }: PlayerGameStripInterface) {
                 alt=""
                 className="hero-image"
                 id="hero-img-game-strip"
+                onClick={() => {
+                    navigate(`/hero/${playerDetails.hero_id}`);
+                }}
             />
-
-            <h3 className="banner-stats-text">
+            <h3
+                className="banner-stats-text clickable-text"
+                onClick={() => {
+                    if (playerDetails.personaname) {
+                        navigate(`/player-profile/${playerDetails.account_id}`);
+                    }
+                }}
+            >
                 {playerDetails.personaname
                     ? playerDetails.personaname
                     : "Anonymous"}

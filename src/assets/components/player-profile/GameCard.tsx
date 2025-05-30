@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { MatchSummaryInterface } from "../../../interfaces/PlayerInterfaces";
 import { idToHeroName } from "../../../modules/helper/idtoheroconverteres";
+import { useNavigate } from "react-router-dom";
 
 interface MatchSummaryHelperInterce {
     matchData: MatchSummaryInterface;
@@ -8,6 +9,8 @@ interface MatchSummaryHelperInterce {
 
 function GameCard({ matchData }: MatchSummaryHelperInterce) {
     const [heroName, setHeroName] = useState<string>("");
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function getHeroName() {
@@ -23,13 +26,19 @@ function GameCard({ matchData }: MatchSummaryHelperInterce) {
 
     return (
         <div id="game-card" className="basic-card">
-            <div id="hero-info-wrapper" className="hero-info-wrapper">
+            <div
+                id="hero-info-wrapper"
+                className="hero-info-wrapper"
+                onClick={() => {
+                    navigate(`/hero/${matchData.hero_id}`);
+                }}
+            >
                 <img
                     src={`/Hero_Photos/${heroName}.png`}
                     id="hero-image"
                     className="hero-image"
                 />
-                <h3 className="banner-stats-text mobile-optional">
+                <h3 className="banner-stats-text mobile-optional clickable-text">
                     {heroName.toUpperCase().replace("_", " ")}
                 </h3>
             </div>

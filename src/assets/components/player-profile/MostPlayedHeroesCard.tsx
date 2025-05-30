@@ -1,6 +1,7 @@
 import type { MostPlayedHeroesInterface } from "../../../interfaces/HeroInterfaces";
 import { useState, useEffect } from "react";
 import { idToHeroName } from "../../../modules/helper/idtoheroconverteres";
+import { useNavigate } from "react-router-dom";
 
 interface MostPlayedHeroesCardInterface {
     heroData: MostPlayedHeroesInterface;
@@ -8,6 +9,8 @@ interface MostPlayedHeroesCardInterface {
 
 function MostPlayedHeroesCard({ heroData }: MostPlayedHeroesCardInterface) {
     const [heroName, setHeroName] = useState<string>("");
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         function getHeroName() {
@@ -23,14 +26,19 @@ function MostPlayedHeroesCard({ heroData }: MostPlayedHeroesCardInterface) {
 
     return (
         <div id="most-played-heroes-card" className="basic-card">
-            <div className="hero-info-wrapper-2">
+            <div
+                className="hero-info-wrapper-2"
+                onClick={() => {
+                    navigate(`/hero/${heroData.hero_id}`);
+                }}
+            >
                 <img
                     src={`/Hero_Photos/${heroName}.png`}
                     id="hero-image2"
                     className="hero-image"
                 />
                 <h3
-                    className="banner-stats-text mini-screen-optional"
+                    className="banner-stats-text mini-screen-optional clickable-text"
                     id="hero-name-most-played-heroes"
                 >
                     {heroName.toUpperCase().replace(/_/g, " ")}

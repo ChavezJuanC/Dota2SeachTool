@@ -1,6 +1,7 @@
 import type { HeroStatsInterface } from "../../../interfaces/HeroInterfaces";
 import { useEffect, useState } from "react";
 import { idToHeroName } from "../../../modules/helper/idtoheroconverteres";
+import { useNavigate } from "react-router-dom";
 
 interface HeroFeedByWinHelperInterface {
     heroStats: HeroStatsInterface;
@@ -8,6 +9,8 @@ interface HeroFeedByWinHelperInterface {
 
 function HeroFeedByWinRateCard({ heroStats }: HeroFeedByWinHelperInterface) {
     const [heroName, setHeroName] = useState<string>();
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const name = idToHeroName(heroStats.id.toString());
@@ -17,13 +20,18 @@ function HeroFeedByWinRateCard({ heroStats }: HeroFeedByWinHelperInterface) {
     return (
         <div id="hero-by-win-rate-feed-wrapper" className="basic-card">
             <div id="hero-by-winrate-card">
-                <div className="hero-info-wrapper">
+                <div
+                    className="hero-info-wrapper"
+                    onClick={() => {
+                        navigate(`/hero/${heroStats.id}`);
+                    }}
+                >
                     <img
                         src={`/Hero_Photos/${heroName?.toLowerCase()}.png`}
                         alt=""
                         className="hero-image"
                     />
-                    <h3 className="basic-info-label mobile-optional" id="">
+                    <h3 className="basic-info-label mobile-optional clickable-text">
                         {heroName?.replace("_", " ")}
                     </h3>
                 </div>

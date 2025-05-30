@@ -11,7 +11,7 @@ function PlayerProfile() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+    }, [id]);
 
     return (
         <div className="full-page-wrapper">
