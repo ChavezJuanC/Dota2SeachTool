@@ -163,7 +163,7 @@ export const HeroIdConstants: BasicHero[] = [
     },
     {
         id: 21,
-        name: "npc_dota_hero_windrunner",
+        name: "npc_dota_hero_windranger",
         localized_name: "Windranger",
         primary_attr: "all",
         attack_type: "Ranged",
@@ -282,7 +282,7 @@ export const HeroIdConstants: BasicHero[] = [
     },
     {
         id: 36,
-        name: "npc_dota_hero_necrolyte",
+        name: "npc_dota_hero_necrophos",
         localized_name: "Necrophos",
         primary_attr: "int",
         attack_type: "Ranged",
@@ -330,7 +330,7 @@ export const HeroIdConstants: BasicHero[] = [
     },
     {
         id: 42,
-        name: "npc_dota_hero_skeleton_king",
+        name: "npc_dota_hero_wraith_king",
         localized_name: "Wraith King",
         primary_attr: "str",
         attack_type: "Melee",
@@ -402,7 +402,7 @@ export const HeroIdConstants: BasicHero[] = [
     },
     {
         id: 51,
-        name: "npc_dota_hero_rattletrap",
+        name: "npc_dota_hero_clockwerk",
         localized_name: "Clockwerk",
         primary_attr: "str",
         attack_type: "Melee",
@@ -418,7 +418,7 @@ export const HeroIdConstants: BasicHero[] = [
     },
     {
         id: 53,
-        name: "npc_dota_hero_furion",
+        name: "npc_dota_hero_nature's_prohet",
         localized_name: "Nature's Prophet",
         primary_attr: "all",
         attack_type: "Ranged",
@@ -546,7 +546,7 @@ export const HeroIdConstants: BasicHero[] = [
     },
     {
         id: 69,
-        name: "npc_dota_hero_doom_bringer",
+        name: "npc_dota_hero_doom",
         localized_name: "Doom",
         primary_attr: "str",
         attack_type: "Melee",
@@ -609,7 +609,7 @@ export const HeroIdConstants: BasicHero[] = [
     },
     {
         id: 76,
-        name: "npc_dota_hero_obsidian_destroyer",
+        name: "npc_dota_hero_outworld_destroyer",
         localized_name: "Outworld Destroyer",
         primary_attr: "int",
         attack_type: "Ranged",
@@ -736,7 +736,7 @@ export const HeroIdConstants: BasicHero[] = [
     },
     {
         id: 91,
-        name: "npc_dota_hero_wisp",
+        name: "npc_dota_hero_io",
         localized_name: "Io",
         primary_attr: "all",
         attack_type: "Ranged",
@@ -872,7 +872,7 @@ export const HeroIdConstants: BasicHero[] = [
     },
     {
         id: 108,
-        name: "npc_dota_hero_abyssal_underlord",
+        name: "npc_dota_hero_underlord",
         localized_name: "Underlord",
         primary_attr: "str",
         attack_type: "Melee",

@@ -12,7 +12,6 @@ function PlayerGameStrip({ playerDetails }: PlayerGameStripInterface) {
         async function createHeroName() {
             const name = await idToHeroName(playerDetails.hero_id.toString());
             setHeroName(name.toLowerCase());
-            console.log(name.toLowerCase());
         }
 
         createHeroName();

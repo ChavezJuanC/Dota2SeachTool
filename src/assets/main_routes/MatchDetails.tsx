@@ -69,8 +69,14 @@ function MatchDetails() {
                 />
             </div>
             <div id="basic-match-deatails-bottom-wrapper">
-                <TeamGameFeed playersList={teamsData?.[0] ?? []} />
-                <TeamGameFeed playersList={teamsData?.[1] ?? []} />
+                <TeamGameFeed
+                    playersList={teamsData?.[0] ?? []}
+                    teamName="Radiant"
+                />
+                <TeamGameFeed
+                    playersList={teamsData?.[1] ?? []}
+                    teamName="Dire"
+                />
             </div>
             <div id="bottom-space">{/* SPACER*/}</div>
         </div>
